@@ -507,7 +507,7 @@ Amongst individuals who have had a hospital admission, we may wish to probe the 
 We begin by decomposing admissions by type and score quantile. See documentation for `plot_decomp()` for details of what we produce.
 
 ```{r,echo=TRUE,fig.width=8,fig.height=6}
-cutoff=0.5 # 10% risk score threshold
+cutoff=0.5 # 50% risk score threshold
 decomp_matrices=dat2mat(pop_data,
                         score=pop_data$score,
                         group1=which(pop_data$urban_rural==0),
@@ -523,7 +523,7 @@ We now plot the corresponding figure for real data:
 
 
 ```{r,echo=TRUE,fig.width=8,fig.height=6}
-cutoff=0.5 # 10% risk score threshold
+cutoff=0.1 # 10% risk score threshold
 names_group1=paste0("v3_Urban_q",1:20)
 names_group2=paste0("v3_Rural_q",1:20)
 decomp1=decomposition_matrix[names_group1,]
@@ -533,6 +533,45 @@ plot_decomp(decomp1,
             threshold=cutoff,
             labels=c("Urban","Rural"))
 ```
+
+
+## Frequencies of admission types amongst false omissions
+
+A useful thing to consider is the proportions of each admission type (respiratory, cardiac etc) amongst _individuals with a low SPARRA score_ as compared with the proportion amongst all individuals. To do this, we consider a particular category (e.g., urban residents) and a score threshold and the two groups of individuals:
+
+1. All individuals in that category who had an emergency admission
+2. All individuals in that category who had an emergency admission and who had a SPARRA score less than the threshold.
+
+Individuals in group 2 are, in a sense, those for whom an emergency admission was unexpected. If a particular admission type is more common in group 2 than in group 1, it indicates that that admission type is relatively harder to predict amongst individuals in that category, and such admissions are less expected.
+
+We first plot an example with simulated data:
+
+```{r,echo=TRUE}
+cutoff=0.5 # 50% risk score threshold
+decomp_matrices=dat2mat(pop_data,
+                        score=pop_data$score,
+                        group1=which(pop_data$urban_rural==0),
+                        group2=which(pop_data$urban_rural==1),
+                        nquant=20)
+for_breakdown(decomp_matrices$matrix1,
+               group="Urban",
+               threshold=cutoff)
+```
+
+We now plot the corresponding figure for real data:
+
+
+```{r,echo=TRUE}
+cutoff=0.1 # 10% risk score threshold
+names_group1=paste0("v3_Urban_q",1:20)
+decomp1=decomposition_matrix[names_group1,]
+for_breakdown(decomp1,
+               group="Urban",
+               threshold=cutoff)
+```
+
+
+
 
 
 ## Plot a diagram

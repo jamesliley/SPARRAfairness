@@ -42,6 +42,9 @@ cal_2panel(
 
 \item{...}{other parameters passed to legend()}
 }
+\value{
+No return value, draws a figure
+}
 \description{
 cal_2panel
 Draws calibration curves (with legend) with a second panel underneath showing predicted differences.

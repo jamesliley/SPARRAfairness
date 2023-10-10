@@ -10,6 +10,9 @@ ab(...)
 \arguments{
 \item{...}{passed to abline()}
 }
+\value{
+No return value, draws a figure
+}
 \description{
 ab()
 Shorthand to draw a red x-y line

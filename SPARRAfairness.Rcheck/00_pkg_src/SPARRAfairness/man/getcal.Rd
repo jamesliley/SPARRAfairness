@@ -8,7 +8,7 @@ getcal(
   y,
   ypred,
   n = 10,
-  kernel = F,
+  kernel = FALSE,
   kernel_sd = 0.05,
   alpha = 0.05,
   c0 = 0,

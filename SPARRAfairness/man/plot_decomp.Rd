@@ -38,7 +38,7 @@ Each matrix corresponds to one group
 Columns are named with the admission types to be plotted. Any admission
 types including the string 'Died' are counted as deaths
 If the matrix has N rows, these are interpreted as corresponding to N
-score quantiles
+score quantiles in increasing order.
 The (i,j)th entry of the matrix is the number of people admitted for
 reason i with a score greater than or equal to (j-1)/N and less than (j/N)
 who are in that group

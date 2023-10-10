@@ -1,6 +1,6 @@
 Package: SPARRAfairness
-Title: Analysis of Differential Performance of SPARRA Score Across Demographic Groups
-Version: 0.0.0.1
+Title: Analysis of Differential Behaviour of SPARRA Score Across Demographic Groups
+Version: 0.0.0.2
 Authors@R: 
   c(person(given = "Ioanna",
            family = "Thoma",
@@ -33,17 +33,18 @@ Authors@R:
            email = "james.liley@durham.ac.uk",
            comment = c(ORCID = "0000-0002-0049-8238")))
 Maintainer: James Liley <james.liley@durham.ac.uk>
-Description: The SPARRA risk score (Scottish Patients At Risk of admission and Re-Admission) estimates yearly risk of emergency hospital admission using electronic health records on a monthly basis for most of the Scottish population. This package implements a suite of functions used to analyse performance of the score, focusing particularly on differential performance over demographically-defined groups. Includes useful utility functions to plot ROC, PRC and calibration curves, draw stock human figures, and estimate counterfactual quantities without the need to re-compute risk scores. 
+Description: The SPARRA risk score (Scottish Patients At Risk of admission and Re-Admission) estimates yearly risk of emergency hospital admission using electronic health records on a monthly basis for most of the Scottish population. This package implements a suite of functions used to analyse the behaviour and performance of the score, focusing particularly on differential performance over demographically-defined groups. It includes useful utility functions to plot receiver-operator-characteristic, precision-recall and calibration curves, draw stock human figures, estimate counterfactual quantities without the need to re-compute risk scores, to simulate a semi-realistic dataset.
 License: GPL (>=3)
 Encoding: UTF-8
 LazyData: true
-Depends: R (>= 3.5.0), stats, graphics, grDevices, matrixStats, mvtnorm, cvAUC, ranger
+Depends: R (>= 3.5.0), stats, graphics, grDevices, matrixStats, ranger
+Imports: cvAUC,ggplot2,ggrepel,mvtnorm
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.1
 Suggests: knitr, rmarkdown
 VignetteBuilder: knitr
 NeedsCompilation: no
-Packaged: 2023-04-14 08:40:45 UTC; vwbw55
+Packaged: 2023-10-10 16:18:58 UTC; vwbw55
 Author: Ioanna Thoma [aut] (<https://orcid.org/0000-0001-6928-2198>),
   Catalina Vallejos [ctb] (<https://orcid.org/0000-0003-3638-1960>),
   Louis Aslett [ctb] (<https://orcid.org/0000-0003-2211-233X>),

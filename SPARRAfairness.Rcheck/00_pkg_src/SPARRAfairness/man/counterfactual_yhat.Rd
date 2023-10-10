@@ -148,7 +148,7 @@ YhatG1X1_resample=dat$Yhat[ind_G1X1]
 
 # Compare CDFs
 x=seq(0,1,length=1000)
-par(mfrow=c(1,2))
+oldpar = par(mfrow=c(1,2))
 
 plot(0,type="n",xlim=c(0,1),ylim=c(0,1),xlab="Value",
      ylab=expression(paste("Prop. ",hat('Y')," < x")))
@@ -199,5 +199,7 @@ legend("bottomright",
 # In both plots, the estimated counterfactual CDF closely matches the CDF of the
 #  true counterfactual.
 
+# Restore parameters
+par(oldpar)
 
 }

@@ -23,6 +23,9 @@
 
 \item{...}{passed to lines()}
 }
+\value{
+No return value, draws a figure
+}
 \description{
 Plot function for class sparraCAL
 }

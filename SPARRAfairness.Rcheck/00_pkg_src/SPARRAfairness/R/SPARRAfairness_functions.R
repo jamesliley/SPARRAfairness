@@ -111,6 +111,7 @@ integral=function(x,y=NULL) {
 ##' ab() 
 ##' Shorthand to draw a red x-y line
 ##' @param ... passed to abline()
+##' @return No return value, draws a figure
 ##' @export
 ab=function(...) abline(0,1,col=phs_colours("phs-magenta"),...)
 
@@ -250,7 +251,7 @@ ab=function(...) abline(0,1,col=phs_colours("phs-magenta"),...)
 ##' 
 ##' # Compare CDFs
 ##' x=seq(0,1,length=1000)
-##' par(mfrow=c(1,2))
+##' oldpar = par(mfrow=c(1,2))
 ##' 
 ##' plot(0,type="n",xlim=c(0,1),ylim=c(0,1),xlab="Value",
 ##'      ylab=expression(paste("Prop. ",hat('Y')," < x")))
@@ -301,6 +302,8 @@ ab=function(...) abline(0,1,col=phs_colours("phs-magenta"),...)
 ##' # In both plots, the estimated counterfactual CDF closely matches the CDF of the
 ##' #  true counterfactual.
 ##' 
+##' # Restore parameters
+##' par(oldpar)
 ##' 
 counterfactual_yhat=function(dat,X,x=NULL,G,g,gdash,excl=NULL,n=NULL) {
   
@@ -347,7 +350,7 @@ counterfactual_yhat=function(dat,X,x=NULL,G,g,gdash,excl=NULL,n=NULL) {
 ##' @return matrix of dimension length(cutoffs)x4, with (i,2g-1)th entry the proportion of scores in group g which are less than or equal to the ith cutoff value and (i,2g)th entry the approximate standard error of the (i,2g-1)th entry
 ##' @examples 
 ##' # See vignette
-demographic_parity=function(scores,group1,group2, cutoffs=seq(min(scores,na.rm=T),max(scores,na.rm=T),length=100)) {
+demographic_parity=function(scores,group1,group2, cutoffs=seq(min(scores,na.rm=TRUE),max(scores,na.rm=TRUE),length=100)) {
   
   s1=scores[group1]
   s2=scores[group2]
@@ -396,7 +399,7 @@ demographic_parity=function(scores,group1,group2, cutoffs=seq(min(scores,na.rm=T
 ##' @examples 
 ##' # See vignette
 group_fairness=function(specs,scores, target, group1, group2, 
-                        cutoffs=seq(min(scores,na.rm=T),max(scores,na.rm=T),length=100)) {
+                        cutoffs=seq(min(scores,na.rm=TRUE),max(scores,na.rm=TRUE),length=100)) {
   
   ncut=length(cutoffs)
   ndat=length(scores)
@@ -481,7 +484,7 @@ group_fairness=function(specs,scores, target, group1, group2,
 ##' # See vignette
 adjusted_for=function(scores, target, category, 
                       group1, group2, 
-                      cutoffs=seq(min(scores,na.rm=T),max(scores,na.rm=T),length=100),
+                      cutoffs=seq(min(scores,na.rm=TRUE),max(scores,na.rm=TRUE),length=100),
                       nboot=100) {
   
   ncut=length(cutoffs)
@@ -511,7 +514,7 @@ adjusted_for=function(scores, target, category,
   b_A=array(0,dim=c(length(ucat),nboot))
   b_B=array(0,dim=c(length(ucat),nboot))
   for (j in 1:nboot) {
-    dsub_b=dsub[sample(dim(dsub)[1],replace=T),]
+    dsub_b=dsub[sample(dim(dsub)[1],replace=TRUE),]
     b_n[,j]=table(dsub_b$cat)[ucat]
     b_A[,j]=table(dsub_b$cat[which(dsub_b$group=="A")])[ucat]
     b_B[,j]=table(dsub_b$cat[which(dsub_b$group=="B")])[ucat]
@@ -548,7 +551,7 @@ adjusted_for=function(scores, target, category,
       forp_A[i,w1]=cumsum(subA$target)[nA1[w1]]/nA1[w1]
     }
     for (j in 1:nboot) {
-      subAc=subA[sort(sample(dim(subA)[1],b_A[i,j],replace=T)),]
+      subAc=subA[sort(sample(dim(subA)[1],b_A[i,j],replace=TRUE)),]
       if (length(unique(subAc$score))>2) {
         nA1=round(ecdf(subAc$score)(cutoffs)*length(subAc$score))
         nA2=round((1-ecdf(subAc$score)(cutoffs))*length(subAc$score))
@@ -565,7 +568,7 @@ adjusted_for=function(scores, target, category,
       forp_B[i,w1]=cumsum(subB$target)[nB1[w1]]/nB1[w1]
     }
     for (j in 1:nboot) {
-      subBc=subB[sort(sample(dim(subB)[1],b_B[i,j],replace=T)),]
+      subBc=subB[sort(sample(dim(subB)[1],b_B[i,j],replace=TRUE)),]
       if (length(unique(subBc$score))>2) {
         nB1=round(ecdf(subBc$score)(cutoffs)*length(subBc$score))
         nB2=round((1-ecdf(subBc$score)(cutoffs))*length(subBc$score))
@@ -581,11 +584,11 @@ adjusted_for=function(scores, target, category,
   b_FORP_B1=matrix(0,length(cutoffs),nboot)
   
   for (i in 1:length(cutoffs)) {
-    FORP_A1[i]=sum(forp_A[,i]*dt_forp[,i],na.rm=T) 
-    FORP_B1[i]=sum(forp_B[,i]*dt_forp[,i],na.rm=T) 
+    FORP_A1[i]=sum(forp_A[,i]*dt_forp[,i],na.rm=TRUE) 
+    FORP_B1[i]=sum(forp_B[,i]*dt_forp[,i],na.rm=TRUE) 
     for (j in 1:nboot) {
-      b_FORP_A1[i,j]=sum(b_forp_A[,i,j]*b_dt_forp[,i,j],na.rm=T) 
-      b_FORP_B1[i,j]=sum(b_forp_B[,i,j]*b_dt_forp[,i,j],na.rm=T) 
+      b_FORP_A1[i,j]=sum(b_forp_A[,i,j]*b_dt_forp[,i,j],na.rm=TRUE) 
+      b_FORP_B1[i,j]=sum(b_forp_B[,i,j]*b_dt_forp[,i,j],na.rm=TRUE) 
     }
   }
   
@@ -605,7 +608,7 @@ adjusted_for=function(scores, target, category,
   
   
   # Standard errors and confidence intervals are approximate, and take weights as fixed
-  qx=function(x,alpha) if (any(is.finite(x))) quantile(x,alpha,na.rm=T) else NA
+  qx=function(x,alpha) if (any(is.finite(x))) quantile(x,alpha,na.rm=TRUE) else NA
   se_FORP_A=apply(b_FORP_A,1,function(x) qx(x,0.841)-qx(x,0.159))/2 # one SE
   se_FORP_B=apply(b_FORP_B,1,function(x) qx(x,0.841)-qx(x,0.159))/2 
   
@@ -643,7 +646,7 @@ adjusted_for=function(scores, target, category,
 ##' # See vignette
 adjusted_fdr=function(scores, target, category, 
                       group1, group2, 
-                      cutoffs=seq(min(scores,na.rm=T),max(scores,na.rm=T),length=100),
+                      cutoffs=seq(min(scores,na.rm=TRUE),max(scores,na.rm=TRUE),length=100),
                       nboot=100) {
   
   ncut=length(cutoffs)
@@ -674,7 +677,7 @@ adjusted_fdr=function(scores, target, category,
   b_A=array(0,dim=c(length(ucat),nboot))
   b_B=array(0,dim=c(length(ucat),nboot))
   for (j in 1:nboot) {
-    dsub_b=dsub[sample(dim(dsub)[1],replace=T),]
+    dsub_b=dsub[sample(dim(dsub)[1],replace=TRUE),]
     b_n[,j]=table(dsub_b$cat)[ucat]
     b_A[,j]=table(dsub_b$cat[which(dsub_b$group=="A")])[ucat]
     b_B[,j]=table(dsub_b$cat[which(dsub_b$group=="B")])[ucat]
@@ -712,7 +715,7 @@ adjusted_fdr=function(scores, target, category,
       fdrp_A[i,w2]=cumsum(rev(1-subA$target))[nA2[w2]]/nA2[w2]
     }
     for (j in 1:nboot) {
-      subAc=subA[sort(sample(dim(subA)[1],b_A[i,j],replace=T)),]
+      subAc=subA[sort(sample(dim(subA)[1],b_A[i,j],replace=TRUE)),]
       if (length(unique(subAc$score))>2) {
         nA1=round(ecdf(subAc$score)(cutoffs)*length(subAc$score))
         nA2=round((1-ecdf(subAc$score)(cutoffs))*length(subAc$score))
@@ -729,7 +732,7 @@ adjusted_fdr=function(scores, target, category,
       fdrp_B[i,w2]=cumsum(rev(1-subB$target))[nB2[w2]]/nB2[w2]
     }
     for (j in 1:nboot) {
-      subBc=subB[sort(sample(dim(subB)[1],b_B[i,j],replace=T)),]
+      subBc=subB[sort(sample(dim(subB)[1],b_B[i,j],replace=TRUE)),]
       if (length(unique(subBc$score))>2) {
         nB1=round(ecdf(subBc$score)(cutoffs)*length(subBc$score))
         nB2=round((1-ecdf(subBc$score)(cutoffs))*length(subBc$score))
@@ -745,11 +748,11 @@ adjusted_fdr=function(scores, target, category,
   b_FDRP_B1=matrix(0,length(cutoffs),nboot)
   
   for (i in 1:length(cutoffs)) {
-    FDRP_A1[i]=sum(fdrp_A[,i]*dt_fdrp[,i],na.rm=T) 
-    FDRP_B1[i]=sum(fdrp_B[,i]*dt_fdrp[,i],na.rm=T) 
+    FDRP_A1[i]=sum(fdrp_A[,i]*dt_fdrp[,i],na.rm=TRUE) 
+    FDRP_B1[i]=sum(fdrp_B[,i]*dt_fdrp[,i],na.rm=TRUE) 
     for (j in 1:nboot) {
-      b_FDRP_A1[i,j]=sum(b_fdrp_A[,i,j]*b_dt_fdrp[,i,j],na.rm=T) 
-      b_FDRP_B1[i,j]=sum(b_fdrp_B[,i,j]*b_dt_fdrp[,i,j],na.rm=T) 
+      b_FDRP_A1[i,j]=sum(b_fdrp_A[,i,j]*b_dt_fdrp[,i,j],na.rm=TRUE) 
+      b_FDRP_B1[i,j]=sum(b_fdrp_B[,i,j]*b_dt_fdrp[,i,j],na.rm=TRUE) 
     }
   }
   
@@ -769,7 +772,7 @@ adjusted_fdr=function(scores, target, category,
   
   
   # Standard errors and confidence intervals are approximate, and take weights as fixed
-  qx=function(x,alpha) if (any(is.finite(x))) quantile(x,alpha,na.rm=T) else NA
+  qx=function(x,alpha) if (any(is.finite(x))) quantile(x,alpha,na.rm=TRUE) else NA
   se_FDRP_A=apply(b_FDRP_A,1,function(x) qx(x,0.841)-qx(x,0.159))/2
   se_FDRP_B=apply(b_FDRP_B,1,function(x) qx(x,0.841)-qx(x,0.159))/2
   
@@ -963,7 +966,7 @@ getprc=function(y,ypred,cv=NULL,res=100) {
 ##' @return a list with components x (expected calibration), y (observed calibration), n (number of samples in bins, if relevant), lower/upper (confidence interval on y)
 ##' @examples 
 ##' # See vignette
-getcal=function(y,ypred,n=10,kernel=F,kernel_sd=0.05,alpha=0.05,c0=0,c2=0.1) {
+getcal=function(y,ypred,n=10,kernel=FALSE,kernel_sd=0.05,alpha=0.05,c0=0,c2=0.1) {
   if (!kernel) {
     ycal=rep(0,n); xcal=ycal; ncal=ycal
     xup=rep(0,n); xdown=rep(0,n)
@@ -1017,6 +1020,7 @@ getcal=function(y,ypred,n=10,kernel=F,kernel_sd=0.05,alpha=0.05,c0=0,c2=0.1) {
 ##' @param add set to FALSE to add to existing plot
 ##' @param add_xy_line set to TRUE to draw an X-Y reference line.
 ##' @param ... passed to lines()
+##' @return No return value, draws a figure
 ##' @export
 ##' @examples 
 ##' # See vignette
@@ -1034,6 +1038,7 @@ plot.sparraCAL=function(x,cols=rep(phs_colours("phs-blue"),dim(x$sens)[1]),add=F
 ##' @param addauc set to TRUE to add text to the plot showing the (mean) AUC and SE.
 ##' @param cols colour to draw lines
 ##' @param ... passed to plot()
+##' @return No return value, draws a figure
 ##' @export
 ##' @examples 
 ##' # See vignette
@@ -1054,6 +1059,7 @@ plot.sparraROC=function(x,addauc=FALSE,cols=rep(phs_colours("phs-blue"),dim(x$se
 ##' @param addauc set to TRUE to add text to the plot showing the (mean) AUC and SE.
 ##' @param cols colour to draw lines
 ##' @param ... passed to plot()
+##' @return No return value, draws a figure
 ##' @export
 ##' @examples 
 ##' # See vignette
@@ -1083,6 +1089,7 @@ plot.sparraPRC=function(x,addauc=FALSE,cols=rep(phs_colours("phs-blue"),dim(x$se
 ##' @param mar_scale scale bottom and left margins by this amount. Also scales legend.
 ##' @param yrange_lower y range for lower plot. If NULL, generates automatically
 ##' @param ... other parameters passed to legend()
+##' @return No return value, draws a figure
 ##' @export
 ##' @examples 
 ##' # See vignette
@@ -1100,6 +1107,8 @@ roc_2panel=function(rocs,labels,col=1:length(rocs),
   }
   
   # Set up plot parameters
+  oldpar = par(no.readonly = TRUE)
+  on.exit(par(oldpar)) 
   par(mar=c(1,mar_scale*4,0.1,0.1))
   layout(mat=rbind(matrix(1,4,4),matrix(2,2,4)))
   
@@ -1130,7 +1139,7 @@ roc_2panel=function(rocs,labels,col=1:length(rocs),
   # Bottom panel setup
   par(mar=c(mar_scale*4,mar_scale*4,0.1,0.1))
   if (is.null(yrange_lower)) {
-    yrr=range(t(xr)-xr[1,],na.rm=T); 
+    yrr=range(t(xr)-xr[1,],na.rm=TRUE); 
     if (!is.finite(sum(yrr))) yrr=c(-1,1)
   } else yrr=yrange_lower
   
@@ -1170,6 +1179,7 @@ roc_2panel=function(rocs,labels,col=1:length(rocs),
 ##' @param mar_scale scale bottom and left margins by this amount. Also scales legend.
 ##' @param yrange_lower y range for lower plot. If NULL, generates automatically
 ##' @param ... other parameters passed to legend()
+##' @return No return value, draws a figure
 ##' @export
 ##' @examples 
 ##' # See vignette
@@ -1188,6 +1198,8 @@ prc_2panel=function(prcs,labels,col=1:length(prcs),
   
   
   # Set up plot 
+  oldpar = par(no.readonly = TRUE)
+  on.exit(par(oldpar)) 
   par(mar=c(1,mar_scale*4,0.1,0.1))
   layout(mat=rbind(matrix(1,4,4),matrix(2,2,4)))
   
@@ -1247,6 +1259,7 @@ prc_2panel=function(prcs,labels,col=1:length(prcs),
 ##' @param mar_scale scale bottom and left margins by this amount. Also scales legend.
 ##' @param yrange_lower y range for lower plot. If NULL, generates automatically
 ##' @param ... other parameters passed to legend()
+##' @return No return value, draws a figure
 ##' @export
 ##' @examples 
 ##' # See vignette
@@ -1256,6 +1269,8 @@ cal_2panel=function(cals,labels,col=1:length(cals),
   
   
   # Setup plot
+  oldpar = par(no.readonly = TRUE)
+  on.exit(par(oldpar)) 
   par(mar=c(1,mar_scale*4,0.1,0.1))
   layout(mat=rbind(matrix(1,4,4),matrix(2,2,4)))
   
@@ -1285,7 +1300,7 @@ cal_2panel=function(cals,labels,col=1:length(cals),
   xpred=seq(0,1,length=100)[2:99]
   
   if (is.null(yrange_lower)) {
-    yrr=range(xr,na.rm=T); if (!is.finite(sum(yrr))) yrr=c(-1,1)
+    yrr=range(xr,na.rm=TRUE); if (!is.finite(sum(yrr))) yrr=c(-1,1)
   } else yrr=yrange_lower
   
   plot(0,xlim=c(0,1),ylim=yrr,type="n",
@@ -1330,6 +1345,7 @@ cal_2panel=function(cals,labels,col=1:length(cals),
 ##' @param lpos legend position
 ##' @param yrange_lower y range for lower plot. If NULL, generates automatically
 ##' @param ... other parameters passed to legend()
+##' @return No return value, draws a figure
 ##' @export
 ##' @examples 
 ##' # See vignette
@@ -1338,6 +1354,8 @@ groupmetric_2panel=function(objs,labels,col=1:length(objs),lty=rep(1,length(col)
                             mar_scale=1,lpos=NULL,yrange_lower=NULL,...) {
   
   # Set up plot  
+  oldpar = par(no.readonly = TRUE)
+  on.exit(par(oldpar)) 
   par(mar=c(1,mar_scale*4,0.1,0.1))
   layout(mat=rbind(matrix(1,4,4),matrix(2,2,4)))
   
@@ -1393,7 +1411,7 @@ groupmetric_2panel=function(objs,labels,col=1:length(objs),lty=rep(1,length(col)
   par(mar=c(mar_scale*4,mar_scale*4,0.1,0.1))
   
   if (is.null(yrange_lower)) {
-    yrr=range(yr,na.rm=T); if (!is.finite(sum(yrr))) yrr=c(-1,1)
+    yrr=range(yr,na.rm=TRUE); if (!is.finite(sum(yrr))) yrr=c(-1,1)
   } else yrr=yrange_lower
   plot(0,xlim=xrange,ylim=yrr,type="n",
        xlab="Cutoffs",ylab=expression(paste(Delta,"prob")),xaxt="n",las=1)
@@ -1440,7 +1458,7 @@ groupmetric_2panel=function(objs,labels,col=1:length(objs),lty=rep(1,length(col)
 ##'  Columns are named with the admission types to be plotted. Any admission 
 ##'   types including the string 'Died' are counted as deaths
 ##'  If the matrix has N rows, these are interpreted as corresponding to N
-##'   score quantiles
+##'   score quantiles in increasing order.
 ##'  The (i,j)th entry of the matrix is the number of people admitted for 
 ##'   reason i with a score greater than or equal to (j-1)/N and less than (j/N) 
 ##'   who are in that group
@@ -1451,6 +1469,7 @@ groupmetric_2panel=function(objs,labels,col=1:length(objs),lty=rep(1,length(col)
 ##' @param labels labels for group 1 and group 2
 ##' @param inc_died set to TRUE to include a second panel showing 'death' type admissions
 ##' @param mar_scale scale margins by this amount. Also scales legend.
+##' @return No return value, draws a figure
 ##' @export
 ##' @examples 
 ##' 
@@ -1477,11 +1496,16 @@ plot_decomp=function(decomp1,decomp2,threshold,labels,
   g2=grep("Died",colnames(dat),value=TRUE)
   g1=setdiff(colnames(dat),g2)
   
+  # Remove nonsense
   g2=setdiff(g2,"Died.of.unrecorded")
   g1=setdiff(g1,c("Not.recorded","Other"))
   
   w=order(-as.numeric(dat[1,g1]))
   w2=match(paste0("Died.of.",g1[w]),g2)
+  
+  oldpar = par(no.readonly = TRUE)
+  on.exit(par(oldpar)) 
+  
   
   lsp=0.1
   if (inc_died) {
@@ -1514,7 +1538,7 @@ plot_decomp=function(decomp1,decomp2,threshold,labels,
     
   }
   if (!inc_died) {
-    axis(1,at=(1:length(g1)) + dim(dat)[1]*lsp/2,labels = gsub("."," ",g1[w],fixed=T),las=2,cex.axis=0.7)
+    axis(1,at=(1:length(g1)) + dim(dat)[1]*lsp/2,labels = gsub("."," ",g1[w],fixed=TRUE),las=2,cex.axis=0.7)
   } 
   if (inc_died) {
     par(mar=c(8*mar_scale,4*mar_scale,1,1))
@@ -1533,12 +1557,135 @@ plot_decomp=function(decomp1,decomp2,threshold,labels,
                x,
                y+yci,col=i,lwd=3)
     }
-    axis(1,at=(1:length(g1)) + dim(dat)[1]*lsp/2,labels = gsub("."," ",g1[w],fixed=T),las=2,cex.axis=0.7)
+    axis(1,at=(1:length(g1)) + dim(dat)[1]*lsp/2,labels = gsub("."," ",g1[w],fixed=TRUE),las=2,cex.axis=0.7)
     
   }
-  # conf int
-  # Legend
+
+}
+
+
+
+##' for_breakdown
+##' 
+##' For a given category (e.g., 'male', 'over 65') considers 
+##'   1) all admissions for people in that category
+##'   2) all admissions for people in that category for which the 
+##'       SPARRA score was less than some threshold (e.g., false
+##'       negatives
+##' 
+##' For each of these groups, we consider the breakdown of medical
+##'  admission types. We then plot the frequency of admission types
+##'  in group 1 against the difference in frequencies between group 
+##'  1 and group 2 (group 2 minus group 1).
+##' An admission type which is relatively more common in group (1)
+##'  indicates that, in the relevant category, the admission type
+##'  tends to be associated with higher SPARRA scores (and is in a
+##'  sense easier to predict). Such admission types will correspond
+##'  to points below the line y=0.
+##'  Admission types which are relatively more common in group 2 
+##'  correspond to those which are relatively harder to predict. 
+##'  These correspond to points above the line y=0
+##' Since points are close together, only those greater than a 
+##'  certain distance from 0 are marked.
+##' 
+##' Takes as an argument a matrix in which
+##'   The matrix shows only data for the group in question
+##'  Columns are named with the admission types to be plotted. Any admission 
+##'   types including the string 'Died' are counted as deaths
+##'  If the matrix has N rows, these are interpreted as corresponding to N
+##'   score quantiles in increasing order.
+##'  The (i,j)th entry of the matrix is the number of people admitted for 
+##'   reason i with a score greater than or equal to (j-1)/N and less than (j/N) 
+##'   who are in that group
+##' 
+##' @param decomp_table matrix for group; see specification in description
+##' @param group name of group
+##' @param threshold cutoff, rounded to nearest 0.05
+##' @param inc_died set to TRUE to include a second panel showing 'death' type admissions
+##' @param ldiff specifically label points this far from xy line
+##' @param ci set to a value <1 to draw confidence intervals at that value, or FALSE to not draw confidence intervals.
+##' @return ggplot figure (invisible)
+##' @export
+##' @examples
+##' 
+##' # See vignette
+for_breakdown = function(decomp_table, group, threshold,
+                         inc_died=TRUE,ldiff = 0.005,ci=0.95) {
   
+  # Remove 'died of' type admissions if specified
+  if (!inc_died) decomp_table=decomp_table[,-grep("Died",colnames(decomp_table))]
+  
+  # Remove junk
+  junk=c("Died.of.unrecorded","Not.recorded","Other")
+  decomp_table=decomp_table[,setdiff(colnames(decomp_table),junk)]
+  
+  
+  # Specify colours according to most common admission types
+  pcol = c(1:8, rep(1, dim(decomp_table)[2] - 8))
+  pcol = pcol[(rank(-colSums(decomp_table)))]
+  
+  nquant=dim(decomp_table)[1] # Number of score quantiles
+  tq=floor(nquant*threshold) # Largest quantile less than score threshold
+  
+  # Frequencies by admission type
+  xt = colSums(decomp_table)
+  yt = colSums(decomp_table[1:tq,])
+  
+  # Sums (nxt=total admissions, nyt=total admissions with SPARRA<0.1)
+  nxt = sum(xt)
+  nyt = sum(yt)
+  
+  # Proportions of each admission type
+  pxt = xt/max(1,nxt)
+  pyt = yt/max(1,nyt)
+  
+  # Standard errors for pxt and pyt, taking nxt and nyt as constant
+  se_pxt = sqrt(pxt * (1 - pxt)/nxt)
+  se_pyt = sqrt(pyt * (1 - pyt)/nyt)
+  
+  # Standard error for difference pyt - pxt
+  se_diff = sqrt(se_pxt^2 + se_pyt^2)
+  
+  # (asymptotic) confidence interval for difference pyt - pxt
+  if (ci) {
+    ci_level = ci
+    z_alpha = -qnorm((1 - ci_level)/2)
+    ci_diff_lower = (pyt - pxt) - z_alpha * se_diff
+    ci_diff_upper = (pyt - pxt) + z_alpha * se_diff
+  }
+  
+  # Normalise
+  xt=xt/sum(xt)
+  yt=yt/sum(yt)
+  
+  names(xt) = gsub(".", " ",names(xt),fixed=TRUE)
+  data_df = data.frame(xt, yt, ci_diff_lower, ci_diff_upper)
+  
+  # Set up plot
+  p = ggplot(data_df, aes(x = xt, y = yt - xt,color = factor(pcol))) +
+    geom_hline(yintercept=0,linewidth=1/2) + 
+    geom_point(pch = 16, size = 2)
+  
+  # Add confidence intervals
+  if (ci){
+    p = p +  geom_errorbar(
+      aes(ymin = ci_diff_lower, ymax = ci_diff_upper),
+      color = "blue",
+      linewidth = 0.5)
+  }
+  
+  
+  p=suppressWarnings( p + 
+    geom_label_repel(size = 2, label = ifelse(abs(xt - yt) > ldiff, names(xt), ""), nudge_x = 0.05, nudge_y = 0, box.padding = 0.5) +
+    xlim(c(-0.05,0.35)) + 
+    ylim(c(-0.04, 0.04)) +
+    labs(x = "Freq. in all adm.",
+         y = paste0("(Freq. with score < ", threshold, ") - (Freq. in all adm.)"),
+         title = paste0("Group: ", group)) +
+    theme_minimal() +
+    guides(color = "none"))
+  suppressWarnings(print(p))
+  invisible(p)
 }
 
 
@@ -1561,6 +1708,7 @@ plot_decomp=function(decomp1,decomp2,threshold,labels,
 ##' @param col1 colour to put the 'in' proportion
 ##' @param col2 the other colour
 ##' @param ... passed to 'plot'
+##' @return No return value, draws a figure
 ##' @export
 ##' @examples 
 ##' # See vignette

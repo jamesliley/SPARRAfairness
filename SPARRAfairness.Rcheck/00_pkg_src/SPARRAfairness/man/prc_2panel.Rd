@@ -33,6 +33,9 @@ prc_2panel(
 
 \item{...}{other parameters passed to legend()}
 }
+\value{
+No return value, draws a figure
+}
 \description{
 prc_2panel
 Draws a PRC curve (with legend) with a second panel underneath showing precision difference.

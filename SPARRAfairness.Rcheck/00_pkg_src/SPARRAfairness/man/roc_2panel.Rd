@@ -39,6 +39,9 @@ roc_2panel(
 
 \item{...}{other parameters passed to legend()}
 }
+\value{
+No return value, draws a figure
+}
 \description{
 roc_2panel
 Draws a ROC curve (with legend) with a second panel underneath showing sensitivity difference.

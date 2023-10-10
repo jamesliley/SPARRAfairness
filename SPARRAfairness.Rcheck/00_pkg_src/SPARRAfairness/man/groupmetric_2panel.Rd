@@ -45,6 +45,9 @@ groupmetric_2panel(
 
 \item{...}{other parameters passed to legend()}
 }
+\value{
+No return value, draws a figure
+}
 \description{
 groupmetric_2panel
 Draws plots of a group fairness metric with a second panel underneath

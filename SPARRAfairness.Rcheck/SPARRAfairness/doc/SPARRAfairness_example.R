@@ -335,7 +335,7 @@ groupmetric_2panel(obj_list,
 
 
 ## ----echo=TRUE,fig.width=8,fig.height=6---------------------------------------
-cutoff=0.5 # 10% risk score threshold
+cutoff=0.5 # 50% risk score threshold
 decomp_matrices=dat2mat(pop_data,
                         score=pop_data$score,
                         group1=which(pop_data$urban_rural==0),
@@ -347,7 +347,7 @@ plot_decomp(decomp_matrices$matrix1,
             labels=c("Urban","Rural"))
 
 ## ----echo=TRUE,fig.width=8,fig.height=6---------------------------------------
-cutoff=0.5 # 10% risk score threshold
+cutoff=0.1 # 10% risk score threshold
 names_group1=paste0("v3_Urban_q",1:20)
 names_group2=paste0("v3_Rural_q",1:20)
 decomp1=decomposition_matrix[names_group1,]
@@ -356,6 +356,25 @@ plot_decomp(decomp1,
             decomp2,
             threshold=cutoff,
             labels=c("Urban","Rural"))
+
+## ----echo=TRUE----------------------------------------------------------------
+cutoff=0.5 # 50% risk score threshold
+decomp_matrices=dat2mat(pop_data,
+                        score=pop_data$score,
+                        group1=which(pop_data$urban_rural==0),
+                        group2=which(pop_data$urban_rural==1),
+                        nquant=20)
+for_breakdown(decomp_matrices$matrix1,
+               group="Urban",
+               threshold=cutoff)
+
+## ----echo=TRUE----------------------------------------------------------------
+cutoff=0.1 # 10% risk score threshold
+names_group1=paste0("v3_Urban_q",1:20)
+decomp1=decomposition_matrix[names_group1,]
+for_breakdown(decomp1,
+               group="Urban",
+               threshold=cutoff)
 
 ## ----echo=TRUE----------------------------------------------------------------
 plot(0,type="n",bty="n",ann=F,xlim=c(-1,1)/2,ylim=c(-1,1)/2)

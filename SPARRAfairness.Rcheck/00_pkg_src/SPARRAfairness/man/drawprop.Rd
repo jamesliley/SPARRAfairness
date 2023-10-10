@@ -19,6 +19,9 @@ drawprop(prop, ci, nxy = 10, col1 = "maroon", col2 = "lightblue", ...)
 
 \item{...}{passed to 'plot'}
 }
+\value{
+No return value, draws a figure
+}
 \description{
 Illustrates a proportion as a set of people who are blue rather than red.
 }

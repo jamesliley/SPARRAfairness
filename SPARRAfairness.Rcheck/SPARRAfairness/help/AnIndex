@@ -9,6 +9,7 @@ decomposition_matrix	decomposition_matrix
 demographic_parity	demographic_parity
 drawperson	drawperson
 drawprop	drawprop
+for_breakdown	for_breakdown
 getcal	getcal
 getprc	getprc
 getroc	getroc

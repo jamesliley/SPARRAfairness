@@ -20,6 +20,9 @@
 
 \item{...}{passed to plot()}
 }
+\value{
+No return value, draws a figure
+}
 \description{
 Plot function for class sparraROC
 }

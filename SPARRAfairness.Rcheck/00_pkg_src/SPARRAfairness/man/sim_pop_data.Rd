@@ -65,7 +65,6 @@ intended to appear realistic.
 
 # Simulate data
 dat=sim_pop_data(10000)
-pairs(dat[,1:7])
 cor(dat[,1:7])
 
 # See vignette

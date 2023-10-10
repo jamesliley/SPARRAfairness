@@ -21,6 +21,8 @@
 #' @import mvtnorm
 #' @import cvAUC
 #' @import ranger
+#' @import ggplot2
+#' @import ggrepel
 
 require("matrixStats")  # Matrix row- and column-wise operations
 require("stats")        # Base stats package
@@ -29,6 +31,8 @@ require("grDevices")    # Base graphics devices package
 require("mvtnorm")      # Multivariate normal distribution
 require("cvAUC")        # Cross-validated AUC confidence intervals
 require("ranger")       # Random forests
+require("ggplot2")      # Graphics
+require("ggrepel")      # Space labels out
 
 ##**************************************************#
 ## Data documentation                            ####

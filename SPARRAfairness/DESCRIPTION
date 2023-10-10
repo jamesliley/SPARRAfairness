@@ -1,6 +1,6 @@
 Package: SPARRAfairness
 Title: Analysis of Differential Behaviour of SPARRA Score Across Demographic Groups
-Version: 0.0.0.1
+Version: 0.0.0.2
 Authors@R: 
   c(person(given = "Ioanna",
            family = "Thoma",
@@ -37,7 +37,8 @@ Description: The SPARRA risk score (Scottish Patients At Risk of admission and R
 License: GPL (>=3)
 Encoding: UTF-8
 LazyData: true
-Depends: stats,graphics,grDevices,matrixStats,mvtnorm,cvAUC,ranger
+Depends: stats,graphics,grDevices,matrixStats,ranger
+Imports: cvAUC,ggplot2,ggrepel,mvtnorm
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.1
 Suggests: 

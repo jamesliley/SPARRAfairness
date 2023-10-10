@@ -8,7 +8,7 @@ demographic_parity(
   scores,
   group1,
   group2,
-  cutoffs = seq(min(scores, na.rm = T), max(scores, na.rm = T), length = 100)
+  cutoffs = seq(min(scores, na.rm = TRUE), max(scores, na.rm = TRUE), length = 100)
 )
 }
 \arguments{

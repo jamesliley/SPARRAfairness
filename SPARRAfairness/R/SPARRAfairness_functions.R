@@ -1458,7 +1458,7 @@ groupmetric_2panel=function(objs,labels,col=1:length(objs),lty=rep(1,length(col)
 ##'  Columns are named with the admission types to be plotted. Any admission 
 ##'   types including the string 'Died' are counted as deaths
 ##'  If the matrix has N rows, these are interpreted as corresponding to N
-##'   score quantiles
+##'   score quantiles in increasing order.
 ##'  The (i,j)th entry of the matrix is the number of people admitted for 
 ##'   reason i with a score greater than or equal to (j-1)/N and less than (j/N) 
 ##'   who are in that group
@@ -1496,6 +1496,7 @@ plot_decomp=function(decomp1,decomp2,threshold,labels,
   g2=grep("Died",colnames(dat),value=TRUE)
   g1=setdiff(colnames(dat),g2)
   
+  # Remove nonsense
   g2=setdiff(g2,"Died.of.unrecorded")
   g1=setdiff(g1,c("Not.recorded","Other"))
   
@@ -1559,9 +1560,132 @@ plot_decomp=function(decomp1,decomp2,threshold,labels,
     axis(1,at=(1:length(g1)) + dim(dat)[1]*lsp/2,labels = gsub("."," ",g1[w],fixed=TRUE),las=2,cex.axis=0.7)
     
   }
-  # conf int
-  # Legend
+
+}
+
+
+
+##' for_breakdown
+##' 
+##' For a given category (e.g., 'male', 'over 65') considers 
+##'   1) all admissions for people in that category
+##'   2) all admissions for people in that category for which the 
+##'       SPARRA score was less than some threshold (e.g., false
+##'       negatives
+##' 
+##' For each of these groups, we consider the breakdown of medical
+##'  admission types. We then plot the frequency of admission types
+##'  in group 1 against the difference in frequencies between group 
+##'  1 and group 2 (group 2 minus group 1).
+##' An admission type which is relatively more common in group (1)
+##'  indicates that, in the relevant category, the admission type
+##'  tends to be associated with higher SPARRA scores (and is in a
+##'  sense easier to predict). Such admission types will correspond
+##'  to points below the line y=0.
+##'  Admission types which are relatively more common in group 2 
+##'  correspond to those which are relatively harder to predict. 
+##'  These correspond to points above the line y=0
+##' Since points are close together, only those greater than a 
+##'  certain distance from 0 are marked.
+##' 
+##' Takes as an argument a matrix in which
+##'   The matrix shows only data for the group in question
+##'  Columns are named with the admission types to be plotted. Any admission 
+##'   types including the string 'Died' are counted as deaths
+##'  If the matrix has N rows, these are interpreted as corresponding to N
+##'   score quantiles in increasing order.
+##'  The (i,j)th entry of the matrix is the number of people admitted for 
+##'   reason i with a score greater than or equal to (j-1)/N and less than (j/N) 
+##'   who are in that group
+##' 
+##' @param decomp_table matrix for group; see specification in description
+##' @param group name of group
+##' @param threshold cutoff, rounded to nearest 0.05
+##' @param inc_died set to TRUE to include a second panel showing 'death' type admissions
+##' @param ldiff specifically label points this far from xy line
+##' @param ci set to a value <1 to draw confidence intervals at that value, or FALSE to not draw confidence intervals.
+##' @return ggplot figure (invisible)
+##' @export
+##' @examples
+##' 
+##' # See vignette
+for_breakdown = function(decomp_table, group, threshold,
+                         inc_died=TRUE,ldiff = 0.005,ci=0.95) {
   
+  # Remove 'died of' type admissions if specified
+  if (!inc_died) decomp_table=decomp_table[,-grep("Died",colnames(decomp_table))]
+  
+  # Remove junk
+  junk=c("Died.of.unrecorded","Not.recorded","Other")
+  decomp_table=decomp_table[,setdiff(colnames(decomp_table),junk)]
+  
+  
+  # Specify colours according to most common admission types
+  pcol = c(1:8, rep(1, dim(decomp_table)[2] - 8))
+  pcol = pcol[(rank(-colSums(decomp_table)))]
+  
+  nquant=dim(decomp_table)[1] # Number of score quantiles
+  tq=floor(nquant*threshold) # Largest quantile less than score threshold
+  
+  # Frequencies by admission type
+  xt = colSums(decomp_table)
+  yt = colSums(decomp_table[1:tq,])
+  
+  # Sums (nxt=total admissions, nyt=total admissions with SPARRA<0.1)
+  nxt = sum(xt)
+  nyt = sum(yt)
+  
+  # Proportions of each admission type
+  pxt = xt/max(1,nxt)
+  pyt = yt/max(1,nyt)
+  
+  # Standard errors for pxt and pyt, taking nxt and nyt as constant
+  se_pxt = sqrt(pxt * (1 - pxt)/nxt)
+  se_pyt = sqrt(pyt * (1 - pyt)/nyt)
+  
+  # Standard error for difference pyt - pxt
+  se_diff = sqrt(se_pxt^2 + se_pyt^2)
+  
+  # (asymptotic) confidence interval for difference pyt - pxt
+  if (ci) {
+    ci_level = ci
+    z_alpha = -qnorm((1 - ci_level)/2)
+    ci_diff_lower = (pyt - pxt) - z_alpha * se_diff
+    ci_diff_upper = (pyt - pxt) + z_alpha * se_diff
+  }
+  
+  # Normalise
+  xt=xt/sum(xt)
+  yt=yt/sum(yt)
+  
+  names(xt) = gsub(".", " ",names(xt),fixed=TRUE)
+  data_df = data.frame(xt, yt, ci_diff_lower, ci_diff_upper)
+  
+  # Set up plot
+  p = ggplot(data_df, aes(x = xt, y = yt - xt,color = factor(pcol))) +
+    geom_hline(yintercept=0,linewidth=1/2) + 
+    geom_point(pch = 16, size = 2)
+  
+  # Add confidence intervals
+  if (ci){
+    p = p +  geom_errorbar(
+      aes(ymin = ci_diff_lower, ymax = ci_diff_upper),
+      color = "blue",
+      linewidth = 0.5)
+  }
+  
+  
+  p=suppressWarnings( p + 
+    geom_label_repel(size = 2, label = ifelse(abs(xt - yt) > ldiff, names(xt), ""), nudge_x = 0.05, nudge_y = 0, box.padding = 0.5) +
+    xlim(c(-0.05,0.35)) + 
+    ylim(c(-0.04, 0.04)) +
+    labs(x = "Freq. in all adm.",
+         y = paste0("(Freq. with score < ", threshold, ") - (Freq. in all adm.)"),
+         title = paste0("Group: ", group)) +
+    theme_minimal() +
+    guides(color = "none"))
+  suppressWarnings(print(p))
+  invisible(p)
 }
 
 
