@@ -1604,13 +1604,16 @@ plot_decomp=function(decomp1,decomp2,threshold,labels,
 ##' @param inc_died set to TRUE to include a second panel showing 'death' type admissions
 ##' @param ldiff specifically label points this far from xy line
 ##' @param ci set to a value <1 to draw confidence intervals at that value, or FALSE to not draw confidence intervals.
+##' @param xlimit limits for x axis; default c(-0.05,0.35)
+##' @param ylimit limits for y axis; default c(-0.04,0.04)
 ##' @return ggplot figure (invisible)
 ##' @export
 ##' @examples
 ##' 
 ##' # See vignette
 for_breakdown = function(decomp_table, group, threshold,
-                         inc_died=TRUE,ldiff = 0.005,ci=0.95) {
+                         inc_died=TRUE,ldiff = 0.005,ci=0.95,
+                         xlimit=c(-0.05,0.35),ylimit=c(-0.04, 0.04)) {
   
   # Remove 'died of' type admissions if specified
   if (!inc_died) decomp_table=decomp_table[,-grep("Died",colnames(decomp_table))]
@@ -1677,8 +1680,8 @@ for_breakdown = function(decomp_table, group, threshold,
   
   p=suppressWarnings( p + 
     geom_label_repel(size = 2, label = ifelse(abs(xt - yt) > ldiff, names(xt), ""), nudge_x = 0.05, nudge_y = 0, box.padding = 0.5) +
-    xlim(c(-0.05,0.35)) + 
-    ylim(c(-0.04, 0.04)) +
+    xlim(xlimit) + 
+    ylim(ylimit) +
     labs(x = "Freq. in all adm.",
          y = paste0("(Freq. with score < ", threshold, ") - (Freq. in all adm.)"),
          title = paste0("Group: ", group)) +

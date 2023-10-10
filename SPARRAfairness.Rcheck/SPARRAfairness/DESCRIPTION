@@ -44,11 +44,11 @@ RoxygenNote: 7.2.1
 Suggests: knitr, rmarkdown
 VignetteBuilder: knitr
 NeedsCompilation: no
-Packaged: 2023-10-10 16:18:58 UTC; vwbw55
+Packaged: 2023-10-10 17:50:50 UTC; vwbw55
 Author: Ioanna Thoma [aut] (<https://orcid.org/0000-0001-6928-2198>),
   Catalina Vallejos [ctb] (<https://orcid.org/0000-0003-3638-1960>),
   Louis Aslett [ctb] (<https://orcid.org/0000-0003-2211-233X>),
   Jill Ireland [ctb] (<https://orcid.org/0009-0009-5324-6630>),
   Simon Rogers [ctb] (<https://orcid.org/0000-0003-3578-4477>),
   James Liley [cre, aut] (<https://orcid.org/0000-0002-0049-8238>)
-Built: R 4.1.2; ; 2023-10-10 16:19:19 UTC; unix
+Built: R 4.1.2; ; 2023-10-10 17:51:44 UTC; unix

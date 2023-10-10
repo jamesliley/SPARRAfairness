@@ -10,7 +10,9 @@ for_breakdown(
   threshold,
   inc_died = TRUE,
   ldiff = 0.005,
-  ci = 0.95
+  ci = 0.95,
+  xlimit = c(-0.05, 0.35),
+  ylimit = c(-0.04, 0.04)
 )
 }
 \arguments{
@@ -25,6 +27,10 @@ for_breakdown(
 \item{ldiff}{specifically label points this far from xy line}
 
 \item{ci}{set to a value <1 to draw confidence intervals at that value, or FALSE to not draw confidence intervals.}
+
+\item{xlimit}{limits for x axis; default c(-0.05,0.35)}
+
+\item{ylimit}{limits for y axis; default c(-0.04,0.04)}
 }
 \value{
 ggplot figure (invisible)

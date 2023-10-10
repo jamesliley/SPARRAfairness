@@ -44,7 +44,7 @@ RoxygenNote: 7.2.1
 Suggests: knitr, rmarkdown
 VignetteBuilder: knitr
 NeedsCompilation: no
-Packaged: 2023-10-10 16:18:58 UTC; vwbw55
+Packaged: 2023-10-10 17:50:50 UTC; vwbw55
 Author: Ioanna Thoma [aut] (<https://orcid.org/0000-0001-6928-2198>),
   Catalina Vallejos [ctb] (<https://orcid.org/0000-0003-3638-1960>),
   Louis Aslett [ctb] (<https://orcid.org/0000-0003-2211-233X>),
