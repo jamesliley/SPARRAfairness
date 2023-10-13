@@ -1136,7 +1136,7 @@ roc_2panel=function(rocs,labels=names(rocs),col=1:length(rocs),
              data.frame(Model=labels[i],
                         sens=rocs[[i]]$sens[1,],
                         spec=rocs[[i]]$spec[1,]))
-  df$Model=factor(df$Model)
+  df$Model=factor(df$Model,levels=unique(df$Model))
   
   # Assemble top figure
   df1=df
@@ -1232,7 +1232,7 @@ prc_2panel=function(prcs,labels=names(prcs),col=1:length(prcs),
              data.frame(Model=labels[i],
                         sens=prcs[[i]]$sens[1,],
                         ppv=prcs[[i]]$ppv[1,]))
-  df$Model=factor(df$Model)
+  df$Model=factor(df$Model,levels=unique(df$Model))
   
   # Assemble top figure
   p1 = ggplot(df) +
@@ -1311,7 +1311,7 @@ prc_2panel=function(prcs,labels=names(prcs),col=1:length(prcs),
 ##' # See vignette
 cal_2panel=function(cals,labels,col=1:length(cals),
                     xy_col=phs_colours("phs-magenta"),
-                    ci_col=rep(NA,length(col)),highlight=NULL,yrange_lower=NULL,
+                    ci_col=col,highlight=NULL,yrange_lower=NULL,
                     legend_title="") {
   
   # Fix colours
@@ -1327,7 +1327,7 @@ cal_2panel=function(cals,labels,col=1:length(cals),
                         exp=cals[[i]]$y,
                         du=cals[[i]]$upper,
                         dl=cals[[i]]$lower))
-  df$Model=factor(df$Model)
+  df$Model=factor(df$Model,levels=unique(df$Model))
   
   # Assemble top figure
   if (!is.null(ci_col)) ccol=ci_col[as.factor(df$Model)]
@@ -1375,7 +1375,7 @@ cal_2panel=function(cals,labels,col=1:length(cals),
   p2=p2 + scale_color_manual(values=col)
   
   if (!is.null(ci_col)) {
-    p1=p1 + scale_fill_manual(values=ci_col)
+    p1=p1 + scale_fill_manual(values=ci_col,name=legend_title) 
     p2=p2 + scale_fill_manual(values=ci_col)
   }
   
@@ -1427,7 +1427,7 @@ cal_2panel=function(cals,labels,col=1:length(cals),
 ##' @examples 
 ##' # See vignette
 groupmetric_2panel=function(objs,labels=names(objs),col=1:length(objs),yrange=NULL,
-                            ci_col=1:length(objs),highlight=NULL,logscale=FALSE,
+                            ci_col=col,highlight=NULL,logscale=FALSE,
                             lpos=c(1,0),yrange_lower=NULL,legend_title="") {
   
   # Fix colours
@@ -1442,7 +1442,7 @@ groupmetric_2panel=function(objs,labels=names(objs),col=1:length(objs),yrange=NU
                         y=objs[[i]]$y,
                         du=objs[[i]]$y + objs[[i]]$ci,
                         dl=objs[[i]]$y - objs[[i]]$ci))
-  df$Model=factor(df$Model)
+  df$Model=factor(df$Model,levels=unique(df$Model))
   
   
   

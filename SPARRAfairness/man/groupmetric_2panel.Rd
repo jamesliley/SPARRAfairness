@@ -10,7 +10,7 @@ groupmetric_2panel(
   labels = names(objs),
   col = 1:length(objs),
   yrange = NULL,
-  ci_col = 1:length(objs),
+  ci_col = col,
   highlight = NULL,
   logscale = FALSE,
   lpos = c(1, 0),

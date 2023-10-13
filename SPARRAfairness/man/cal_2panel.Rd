@@ -10,7 +10,7 @@ cal_2panel(
   labels,
   col = 1:length(cals),
   xy_col = phs_colours("phs-magenta"),
-  ci_col = rep(NA, length(col)),
+  ci_col = col,
   highlight = NULL,
   yrange_lower = NULL,
   legend_title = ""
