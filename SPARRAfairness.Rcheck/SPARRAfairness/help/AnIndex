@@ -2,6 +2,7 @@ ab	ab
 adjusted_fdr	adjusted_fdr
 adjusted_for	adjusted_for
 all_data	all_data
+build_diff	build_diff
 cal_2panel	cal_2panel
 counterfactual_yhat	counterfactual_yhat
 dat2mat	dat2mat

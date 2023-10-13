@@ -7,17 +7,15 @@ Draws plots of a group fairness metric with a second panel underneath}
 \usage{
 groupmetric_2panel(
   objs,
-  labels,
+  labels = names(objs),
   col = 1:length(objs),
-  lty = rep(1, length(col)),
   yrange = NULL,
   ci_col = 1:length(objs),
   highlight = NULL,
   logscale = FALSE,
-  mar_scale = 1,
-  lpos = NULL,
+  lpos = c(1, 0),
   yrange_lower = NULL,
-  ...
+  legend_title = ""
 )
 }
 \arguments{
@@ -27,8 +25,6 @@ groupmetric_2panel(
 
 \item{col}{line colours}
 
-\item{lty}{line type, defaults to 1}
-
 \item{yrange}{limit of y axis; defaults to 0,1}
 
 \item{ci_col}{confidence envelope colours. These will be transparent.}
@@ -37,16 +33,14 @@ groupmetric_2panel(
 
 \item{logscale}{if TRUE, draw with log-scale.}
 
-\item{mar_scale}{scale bottom and left margins by this amount. Also scales legend.}
-
-\item{lpos}{legend position}
+\item{lpos}{legend position; as accepted by ggplot legend.position}
 
 \item{yrange_lower}{y range for lower plot. If NULL, generates automatically}
 
-\item{...}{other parameters passed to legend()}
+\item{legend_title}{title for legend, defaults to nothing}
 }
 \value{
-No return value, draws a figure
+Silently return ggplot object
 }
 \description{
 groupmetric_2panel

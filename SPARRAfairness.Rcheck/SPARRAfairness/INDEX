@@ -2,6 +2,7 @@ ab                                                          ab() Shorthand to dr
 adjusted_fdr                                                adjusted_fdr
 adjusted_for                                                adjusted_for
 all_data                                                    All data for fairness measures
+build_diff                                                  build_diff Prepares a data frame for a ggplot object to compare differences using linear interpolation.
 cal_2panel                                                  cal_2panel Draws calibration curves (with legend) with a second panel underneath showing predicted differences.
 counterfactual_yhat                                         counterfactual_yhat
 dat2mat                                                     dat2mat

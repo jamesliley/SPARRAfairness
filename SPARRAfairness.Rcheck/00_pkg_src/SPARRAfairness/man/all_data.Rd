@@ -5,7 +5,7 @@
 \alias{all_data}
 \title{All data for fairness measures}
 \format{
-An object of class \code{list} of length 1260.
+An object of class \code{list} of length 1261.
 }
 \usage{
 all_data

@@ -4,14 +4,7 @@
 \alias{plot_decomp}
 \title{plot_decomp}
 \usage{
-plot_decomp(
-  decomp1,
-  decomp2,
-  threshold,
-  labels,
-  inc_died = TRUE,
-  mar_scale = 1
-)
+plot_decomp(decomp1, decomp2, threshold, labels, inc_died = TRUE)
 }
 \arguments{
 \item{decomp1}{matrix for first group; see specification in description}
@@ -23,11 +16,9 @@ plot_decomp(
 \item{labels}{labels for group 1 and group 2}
 
 \item{inc_died}{set to TRUE to include a second panel showing 'death' type admissions}
-
-\item{mar_scale}{scale margins by this amount. Also scales legend.}
 }
 \value{
-No return value, draws a figure
+Silently return ggplot object
 }
 \description{
 Plots a bar graph of decomposition of FORP by cause of admission

@@ -59,6 +59,23 @@ Loading required package: ranger
 > 
 > 
 > cleanEx()
+> nameEx("build_diff")
+> ### * build_diff
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: build_diff
+> ### Title: build_diff Prepares a data frame for a ggplot object to compare
+> ###   differences using linear interpolation.
+> ### Aliases: build_diff
+> 
+> ### ** Examples
+> 
+> # Only used internally
+> 
+> 
+> 
+> cleanEx()
 > nameEx("cal_2panel")
 > ### * cal_2panel
 > 
@@ -559,7 +576,7 @@ mainland_island  0.33258825      1.00000000
 > cleanEx()
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  1.3 0.097 1.503 0 0 
+Time elapsed:  1.399 0.102 1.639 0 0 
 > grDevices::dev.off()
 null device 
           1 

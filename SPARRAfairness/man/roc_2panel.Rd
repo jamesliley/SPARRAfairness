@@ -7,40 +7,31 @@ Draws a ROC curve (with legend) with a second panel underneath showing sensitivi
 \usage{
 roc_2panel(
   rocs,
-  labels,
+  labels = names(rocs),
   col = 1:length(rocs),
-  lty = rep(1, length(col)),
-  xy_lty = 2,
   xy_col = phs_colours("phs-magenta"),
   highlight = NULL,
-  mar_scale = 1,
   yrange_lower = NULL,
-  ...
+  legend_title = ""
 )
 }
 \arguments{
-\item{rocs}{list of sparraROC objects (if one object, plots folds separately)}
+\item{rocs}{list of sparraROC objects}
 
-\item{labels}{labels to use in legend}
+\item{labels}{labels to use in legend; default to names of rocs.}
 
 \item{col}{line colours}
-
-\item{lty}{line type, defaults to 1}
-
-\item{xy_lty}{line type for x-y line, defaults to 2 (dashed)}
 
 \item{xy_col}{line colour for x-y line, defaults to red}
 
 \item{highlight}{if non-null, add a point at this cutoff}
 
-\item{mar_scale}{scale bottom and left margins by this amount. Also scales legend.}
-
 \item{yrange_lower}{y range for lower plot. If NULL, generates automatically}
 
-\item{...}{other parameters passed to legend()}
+\item{legend_title}{title for legend, defaults to nothing}
 }
 \value{
-No return value, draws a figure
+Invisibly returns plot as ggplot object
 }
 \description{
 roc_2panel

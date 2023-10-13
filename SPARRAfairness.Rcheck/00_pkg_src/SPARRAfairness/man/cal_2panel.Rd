@@ -9,14 +9,11 @@ cal_2panel(
   cals,
   labels,
   col = 1:length(cals),
-  lty = rep(1, length(col)),
-  xy_lty = 2,
   xy_col = phs_colours("phs-magenta"),
   ci_col = rep(NA, length(col)),
   highlight = NULL,
-  mar_scale = 1,
   yrange_lower = NULL,
-  ...
+  legend_title = ""
 )
 }
 \arguments{
@@ -26,24 +23,18 @@ cal_2panel(
 
 \item{col}{line colours}
 
-\item{lty}{line type, defaults to 1}
-
-\item{xy_lty}{line type for x-y line, defaults to 2 (dashed)}
-
 \item{xy_col}{line colour for x-y line, defaults to phs-magenta}
 
 \item{ci_col}{colours to draw confidence intervals on lower panel; NA to not draw.}
 
 \item{highlight}{if non-null, highlight a particular value}
 
-\item{mar_scale}{scale bottom and left margins by this amount. Also scales legend.}
-
 \item{yrange_lower}{y range for lower plot. If NULL, generates automatically}
 
-\item{...}{other parameters passed to legend()}
+\item{legend_title}{title for legend, defaults to nothing}
 }
 \value{
-No return value, draws a figure
+Silently return ggplot object
 }
 \description{
 cal_2panel

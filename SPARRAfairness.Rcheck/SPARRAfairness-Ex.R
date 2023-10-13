@@ -38,6 +38,23 @@ flush(stderr()); flush(stdout())
 
 
 cleanEx()
+nameEx("build_diff")
+### * build_diff
+
+flush(stderr()); flush(stdout())
+
+### Name: build_diff
+### Title: build_diff Prepares a data frame for a ggplot object to compare
+###   differences using linear interpolation.
+### Aliases: build_diff
+
+### ** Examples
+
+# Only used internally
+
+
+
+cleanEx()
 nameEx("cal_2panel")
 ### * cal_2panel
 

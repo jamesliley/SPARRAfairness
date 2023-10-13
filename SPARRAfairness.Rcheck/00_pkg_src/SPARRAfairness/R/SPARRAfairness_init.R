@@ -14,25 +14,23 @@
 ## Packages and scripts                          ####
 ##**************************************************#
 
-#' @import matrixStats
 #' @import stats
 #' @import graphics
 #' @import grDevices
-#' @import mvtnorm
-#' @import cvAUC
+#' @import matrixStats
 #' @import ranger
 #' @import ggplot2
+#' @import mvtnorm
+#' @import cvAUC
 #' @import ggrepel
+#' @import patchwork
+#' @import scales
 
-require("matrixStats")  # Matrix row- and column-wise operations
 require("stats")        # Base stats package
 require("graphics")     # Base graphics package
 require("grDevices")    # Base graphics devices package
-require("mvtnorm")      # Multivariate normal distribution
-require("cvAUC")        # Cross-validated AUC confidence intervals
+require("matrixStats")  # Matrix row- and column-wise operations
 require("ranger")       # Random forests
-require("ggplot2")      # Graphics
-require("ggrepel")      # Space labels out
 
 ##**************************************************#
 ## Data documentation                            ####

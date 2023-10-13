@@ -7,34 +7,28 @@ Draws a PRC curve (with legend) with a second panel underneath showing precision
 \usage{
 prc_2panel(
   prcs,
-  labels,
+  labels = names(prcs),
   col = 1:length(prcs),
-  lty = rep(1, length(col)),
   highlight = NULL,
-  mar_scale = 1,
   yrange_lower = NULL,
-  ...
+  legend_title = ""
 )
 }
 \arguments{
-\item{prcs}{list of sparraPRC objects. If of length 1, splits into folds}
+\item{prcs}{list of sparraPRC objects.}
 
 \item{labels}{labels to use in legend}
 
 \item{col}{line colours}
 
-\item{lty}{line type, defaults to 1}
-
 \item{highlight}{if non-null, draw a point at a particular cutoff}
-
-\item{mar_scale}{scale bottom and left margins by this amount. Also scales legend.}
 
 \item{yrange_lower}{y range for lower plot. If NULL, generates automatically}
 
-\item{...}{other parameters passed to legend()}
+\item{legend_title}{title for legend, defaults to nothing}
 }
 \value{
-No return value, draws a figure
+Silently return ggplot object
 }
 \description{
 prc_2panel
