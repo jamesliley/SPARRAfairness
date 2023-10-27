@@ -1333,11 +1333,11 @@ cal_2panel=function(cals,labels,col=1:length(cals),
   if (!is.null(ci_col)) ccol=ci_col[as.factor(df$Model)]
   p1 = ggplot(df)
   if (!is.null(ci_col)) p1=p1 + geom_ribbon(aes(x = .data$obs, ymin = .data$dl, 
-                                                ymax = .data$du,fill=.data$Model),alpha = 0.5)
+                                                ymax = .data$du,fill=.data$Model),alpha = 0.25)
   p1=p1 +
     geom_path(aes(x = .data$obs, y = .data$exp, col = .data$Model), linewidth = 0.4) +
     xlim(0, 1) + ylim(0, 1) +
-    xlab("") + ylab("Expected") +
+    xlab("") + ylab("Observed") +
     theme_minimal(base_size = 8) + theme(legend.justification = c(1,0),
                                          legend.position = c(1,0),
                                          legend.spacing = unit(0, "npc"),
@@ -1361,7 +1361,7 @@ cal_2panel=function(cals,labels,col=1:length(cals),
   
   p2 = ggplot(df2)
   if (!is.null(ci_col)) p2=p2 + geom_ribbon(aes(x = .data$obs, ymin = .data$dl, 
-                                                ymax = .data$du,fill=.data$Model),alpha = 0.5)
+                                                ymax = .data$du,fill=.data$Model),alpha = 0.25)
   p2 = p2 +  geom_path(aes(x = .data$obs, y = .data$dexp,col=.data$Model), linewidth = 0.4) +
     xlim(0, 1) + 
     xlab("Expected") + ylab(expression(paste(Delta," Expected"))) +
@@ -1450,7 +1450,7 @@ groupmetric_2panel=function(objs,labels=names(objs),col=1:length(objs),yrange=NU
   if (!is.null(ci_col)) ccol=ci_col[as.factor(df$Model)]
   p1 = ggplot(df)
   if (!is.null(ci_col)) p1=p1 + geom_ribbon(aes(x = .data$x, ymin = .data$dl, 
-                                                ymax = .data$du,fill=.data$Model),alpha = 0.5)
+                                                ymax = .data$du,fill=.data$Model),alpha = 0.25)
   p1=p1 +
     geom_path(aes(x = .data$x, y = .data$y, col = .data$Model), linewidth = 0.4)
   p1 = p1 + xlab("") + ylab("Probability") +
@@ -1485,7 +1485,7 @@ groupmetric_2panel=function(objs,labels=names(objs),col=1:length(objs),yrange=NU
   
   p2 = ggplot(df2)
   if (!is.null(ci_col)) p2=p2 + geom_ribbon(aes(x = .data$x, ymin = .data$dl,
-                                                ymax = .data$du,fill=.data$Model),alpha = 0.5)
+                                                ymax = .data$du,fill=.data$Model),alpha = 0.25)
   p2 = p2 +  geom_path(aes(x = .data$x, y = .data$dy,col=.data$Model), linewidth = 0.4)
   p2=p2 +   xlab("Cutoffs") + ylab(expression(paste(Delta," Prob."))) +
     theme_minimal(base_size = 8) + theme(legend.position = "none")
@@ -1716,11 +1716,6 @@ for_breakdown = function(decomp_table, group, threshold,
   junk=c("Died.of.unrecorded","Not.recorded","Other")
   decomp_table=decomp_table[,setdiff(colnames(decomp_table),junk)]
   
-  
-  # Specify colours according to most common admission types
-  pcol = c(1:8, rep(1, dim(decomp_table)[2] - 8))
-  pcol = pcol[(rank(-colSums(decomp_table)))]
-  
   nquant=dim(decomp_table)[1] # Number of score quantiles
   tq=floor(nquant*threshold) # Largest quantile less than score threshold
   
@@ -1759,9 +1754,10 @@ for_breakdown = function(decomp_table, group, threshold,
   data_df = data.frame(xt, yt, ci_diff_lower, ci_diff_upper)
   
   # Set up plot
-  p = ggplot(data_df, aes(x = xt, y = yt - xt,color = factor(pcol))) +
+  p = ggplot(data_df, aes(x = xt, y = yt - xt)) +
     geom_hline(yintercept=0,linewidth=1/2) + 
-    geom_point(pch = 16, size = 2)
+    geom_point(pch = 16, size = 2,col="gray") 
+    
   
   # Add confidence intervals
   if (ci){
@@ -1773,7 +1769,8 @@ for_breakdown = function(decomp_table, group, threshold,
   
   
   p=suppressWarnings( p + 
-    geom_label_repel(size = 2, label = ifelse(abs(xt - yt) > ldiff, names(xt), ""), nudge_x = 0.05, nudge_y = 0, box.padding = 0.5) +
+    geom_label_repel(size = 1, label = ifelse(abs(xt - yt) > ldiff, names(xt), ""), 
+                     nudge_x = 0.05, nudge_y = 0, box.padding = 0.2) +
     xlim(xlimit) + 
     ylim(ylimit) +
     labs(x = "Freq. in all adm.",
