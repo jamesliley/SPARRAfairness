@@ -1487,7 +1487,7 @@ groupmetric_2panel=function(objs,labels=names(objs),col=1:length(objs),yrange=NU
   if (!is.null(ci_col)) p2=p2 + geom_ribbon(aes(x = .data$x, ymin = .data$dl,
                                                 ymax = .data$du,fill=.data$Model),alpha = 0.25)
   p2 = p2 +  geom_path(aes(x = .data$x, y = .data$dy,col=.data$Model), linewidth = 0.4)
-  p2=p2 +   xlab("Cutoffs") + ylab(expression(paste(Delta," Prob."))) +
+  p2=p2 +   xlab("Score") + ylab(expression(paste(Delta," Prob."))) +
     theme_minimal(base_size = 8) + theme(legend.position = "none")
   
   if (logscale) {
