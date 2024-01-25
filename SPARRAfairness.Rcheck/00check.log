@@ -1,10 +1,17 @@
 * using log directory ‘/Users/vwbw55/Research/Fairness/Git/SPARRAfairness/SPARRAfairness.Rcheck’
-* using R version 4.1.2 (2021-11-01)
-* using platform: x86_64-apple-darwin17.0 (64-bit)
+* using R version 4.3.2 (2023-10-31)
+* using platform: aarch64-apple-darwin20 (64-bit)
+* R was compiled by
+    Apple clang version 14.0.0 (clang-1400.0.29.202)
+    GNU Fortran (GCC) 12.2.0
+* running under: macOS Ventura 13.6
 * using session charset: UTF-8
+* using option ‘--as-cran’
 * checking for file ‘SPARRAfairness/DESCRIPTION’ ... OK
 * this is package ‘SPARRAfairness’ version ‘0.0.0.2’
 * package encoding: UTF-8
+* checking CRAN incoming feasibility ... [5s/23s] Note_to_CRAN_maintainers
+Maintainer: ‘James Liley <james.liley@durham.ac.uk>’
 * checking package namespace information ... OK
 * checking package dependencies ... OK
 * checking if this is a source package ... OK
@@ -16,6 +23,7 @@
 * checking whether package ‘SPARRAfairness’ can be installed ... OK
 * checking installed package size ... OK
 * checking package directory ... OK
+* checking for future file timestamps ... OK
 * checking ‘build’ directory ... OK
 * checking DESCRIPTION meta-information ... OK
 * checking top-level files ... OK
@@ -29,6 +37,7 @@
 * checking whether the package can be unloaded cleanly ... OK
 * checking whether the namespace can be loaded with stated dependencies ... OK
 * checking whether the namespace can be unloaded cleanly ... OK
+* checking use of S3 registration ... OK
 * checking dependencies in R code ... OK
 * checking S3 generic/method consistency ... OK
 * checking replacement functions ... OK
@@ -36,6 +45,7 @@
 * checking R code for possible problems ... OK
 * checking Rd files ... OK
 * checking Rd metadata ... OK
+* checking Rd line widths ... OK
 * checking Rd cross-references ... OK
 * checking for missing documentation entries ... OK
 * checking for code/documentation mismatches ... OK
@@ -51,9 +61,156 @@
 * checking examples ... OK
 * checking for unstated dependencies in vignettes ... OK
 * checking package vignettes in ‘inst/doc’ ... OK
-* checking running R code from vignettes ... NONE
-  ‘SPARRAfairness_example.Rmd’ using ‘UTF-8’... OK
 * checking re-building of vignette outputs ... OK
 * checking PDF version of manual ... OK
+* checking HTML version of manual ... NOTE
+Found the following HTML validation problems:
+ab.html:4:1 (ab.Rd:5): Warning: <link> inserting "type" attribute
+ab.html:12:1 (ab.Rd:5): Warning: <script> proprietary attribute "onload"
+ab.html:12:1 (ab.Rd:5): Warning: <script> inserting "type" attribute
+ab.html:17:1 (ab.Rd:5): Warning: <table> lacks "summary" attribute
+ab.html:37:1 (ab.Rd:11): Warning: <table> lacks "summary" attribute
+adjusted_fdr.html:4:1 (adjusted_fdr.Rd:5): Warning: <link> inserting "type" attribute
+adjusted_fdr.html:12:1 (adjusted_fdr.Rd:5): Warning: <script> proprietary attribute "onload"
+adjusted_fdr.html:12:1 (adjusted_fdr.Rd:5): Warning: <script> inserting "type" attribute
+adjusted_fdr.html:17:1 (adjusted_fdr.Rd:5): Warning: <table> lacks "summary" attribute
+adjusted_fdr.html:43:1 (adjusted_fdr.Rd:18): Warning: <table> lacks "summary" attribute
+adjusted_for.html:4:1 (adjusted_for.Rd:5): Warning: <link> inserting "type" attribute
+adjusted_for.html:12:1 (adjusted_for.Rd:5): Warning: <script> proprietary attribute "onload"
+adjusted_for.html:12:1 (adjusted_for.Rd:5): Warning: <script> inserting "type" attribute
+adjusted_for.html:17:1 (adjusted_for.Rd:5): Warning: <table> lacks "summary" attribute
+adjusted_for.html:43:1 (adjusted_for.Rd:18): Warning: <table> lacks "summary" attribute
+all_data.html:4:1 (all_data.Rd:6): Warning: <link> inserting "type" attribute
+all_data.html:12:1 (all_data.Rd:6): Warning: <script> proprietary attribute "onload"
+all_data.html:12:1 (all_data.Rd:6): Warning: <script> inserting "type" attribute
+all_data.html:17:1 (all_data.Rd:6): Warning: <table> lacks "summary" attribute
+build_diff.html:4:1 (build_diff.Rd:5): Warning: <link> inserting "type" attribute
+build_diff.html:12:1 (build_diff.Rd:5): Warning: <script> proprietary attribute "onload"
+build_diff.html:12:1 (build_diff.Rd:5): Warning: <script> inserting "type" attribute
+build_diff.html:17:1 (build_diff.Rd:5): Warning: <table> lacks "summary" attribute
+build_diff.html:37:1 (build_diff.Rd:11): Warning: <table> lacks "summary" attribute
+cal_2panel.html:4:1 (cal_2panel.Rd:5): Warning: <link> inserting "type" attribute
+cal_2panel.html:12:1 (cal_2panel.Rd:5): Warning: <script> proprietary attribute "onload"
+cal_2panel.html:12:1 (cal_2panel.Rd:5): Warning: <script> inserting "type" attribute
+cal_2panel.html:17:1 (cal_2panel.Rd:5): Warning: <table> lacks "summary" attribute
+cal_2panel.html:46:1 (cal_2panel.Rd:20): Warning: <table> lacks "summary" attribute
+counterfactual_yhat.html:4:1 (counterfactual_yhat.Rd:5): Warning: <link> inserting "type" attribute
+counterfactual_yhat.html:12:1 (counterfactual_yhat.Rd:5): Warning: <script> proprietary attribute "onload"
+counterfactual_yhat.html:12:1 (counterfactual_yhat.Rd:5): Warning: <script> inserting "type" attribute
+counterfactual_yhat.html:17:1 (counterfactual_yhat.Rd:5): Warning: <table> lacks "summary" attribute
+counterfactual_yhat.html:35:1 (counterfactual_yhat.Rd:10): Warning: <table> lacks "summary" attribute
+counterfactual_yhat.html:44:14 (counterfactual_yhat.Rd:14): Warning: <code> anchor "counterfactual_yhat_:_x" already defined
+counterfactual_yhat.html:52:14 (counterfactual_yhat.Rd:18): Warning: <code> anchor "counterfactual_yhat_:_g" already defined
+dat2mat.html:4:1 (dat2mat.Rd:5): Warning: <link> inserting "type" attribute
+dat2mat.html:12:1 (dat2mat.Rd:5): Warning: <script> proprietary attribute "onload"
+dat2mat.html:12:1 (dat2mat.Rd:5): Warning: <script> inserting "type" attribute
+dat2mat.html:17:1 (dat2mat.Rd:5): Warning: <table> lacks "summary" attribute
+dat2mat.html:35:1 (dat2mat.Rd:10): Warning: <table> lacks "summary" attribute
+decomposition_matrix.html:4:1 (decomposition_matrix.Rd:6): Warning: <link> inserting "type" attribute
+decomposition_matrix.html:12:1 (decomposition_matrix.Rd:6): Warning: <script> proprietary attribute "onload"
+decomposition_matrix.html:12:1 (decomposition_matrix.Rd:6): Warning: <script> inserting "type" attribute
+decomposition_matrix.html:17:1 (decomposition_matrix.Rd:6): Warning: <table> lacks "summary" attribute
+demographic_parity.html:4:1 (demographic_parity.Rd:5): Warning: <link> inserting "type" attribute
+demographic_parity.html:12:1 (demographic_parity.Rd:5): Warning: <script> proprietary attribute "onload"
+demographic_parity.html:12:1 (demographic_parity.Rd:5): Warning: <script> inserting "type" attribute
+demographic_parity.html:17:1 (demographic_parity.Rd:5): Warning: <table> lacks "summary" attribute
+demographic_parity.html:40:1 (demographic_parity.Rd:15): Warning: <table> lacks "summary" attribute
+drawperson.html:4:1 (drawperson.Rd:5): Warning: <link> inserting "type" attribute
+drawperson.html:12:1 (drawperson.Rd:5): Warning: <script> proprietary attribute "onload"
+drawperson.html:12:1 (drawperson.Rd:5): Warning: <script> inserting "type" attribute
+drawperson.html:17:1 (drawperson.Rd:5): Warning: <table> lacks "summary" attribute
+drawperson.html:53:1 (drawperson.Rd:28): Warning: <table> lacks "summary" attribute
+drawprop.html:4:1 (drawprop.Rd:5): Warning: <link> inserting "type" attribute
+drawprop.html:12:1 (drawprop.Rd:5): Warning: <script> proprietary attribute "onload"
+drawprop.html:12:1 (drawprop.Rd:5): Warning: <script> inserting "type" attribute
+drawprop.html:17:1 (drawprop.Rd:5): Warning: <table> lacks "summary" attribute
+drawprop.html:35:1 (drawprop.Rd:10): Warning: <table> lacks "summary" attribute
+for_breakdown.html:4:1 (for_breakdown.Rd:5): Warning: <link> inserting "type" attribute
+for_breakdown.html:12:1 (for_breakdown.Rd:5): Warning: <script> proprietary attribute "onload"
+for_breakdown.html:12:1 (for_breakdown.Rd:5): Warning: <script> inserting "type" attribute
+for_breakdown.html:17:1 (for_breakdown.Rd:5): Warning: <table> lacks "summary" attribute
+for_breakdown.html:55:1 (for_breakdown.Rd:19): Warning: <table> lacks "summary" attribute
+getcal.html:4:1 (getcal.Rd:5): Warning: <link> inserting "type" attribute
+getcal.html:12:1 (getcal.Rd:5): Warning: <script> proprietary attribute "onload"
+getcal.html:12:1 (getcal.Rd:5): Warning: <script> inserting "type" attribute
+getcal.html:17:1 (getcal.Rd:5): Warning: <table> lacks "summary" attribute
+getcal.html:44:1 (getcal.Rd:19): Warning: <table> lacks "summary" attribute
+getprc.html:4:1 (getprc.Rd:5): Warning: <link> inserting "type" attribute
+getprc.html:12:1 (getprc.Rd:5): Warning: <script> proprietary attribute "onload"
+getprc.html:12:1 (getprc.Rd:5): Warning: <script> inserting "type" attribute
+getprc.html:17:1 (getprc.Rd:5): Warning: <table> lacks "summary" attribute
+getprc.html:35:1 (getprc.Rd:10): Warning: <table> lacks "summary" attribute
+getroc.html:4:1 (getroc.Rd:5): Warning: <link> inserting "type" attribute
+getroc.html:12:1 (getroc.Rd:5): Warning: <script> proprietary attribute "onload"
+getroc.html:12:1 (getroc.Rd:5): Warning: <script> inserting "type" attribute
+getroc.html:17:1 (getroc.Rd:5): Warning: <table> lacks "summary" attribute
+getroc.html:36:1 (getroc.Rd:11): Warning: <table> lacks "summary" attribute
+group_fairness.html:4:1 (group_fairness.Rd:5): Warning: <link> inserting "type" attribute
+group_fairness.html:12:1 (group_fairness.Rd:5): Warning: <script> proprietary attribute "onload"
+group_fairness.html:12:1 (group_fairness.Rd:5): Warning: <script> inserting "type" attribute
+group_fairness.html:17:1 (group_fairness.Rd:5): Warning: <table> lacks "summary" attribute
+group_fairness.html:42:1 (group_fairness.Rd:17): Warning: <table> lacks "summary" attribute
+groupmetric_2panel.html:4:1 (groupmetric_2panel.Rd:5): Warning: <link> inserting "type" attribute
+groupmetric_2panel.html:12:1 (groupmetric_2panel.Rd:5): Warning: <script> proprietary attribute "onload"
+groupmetric_2panel.html:12:1 (groupmetric_2panel.Rd:5): Warning: <script> inserting "type" attribute
+groupmetric_2panel.html:17:1 (groupmetric_2panel.Rd:5): Warning: <table> lacks "summary" attribute
+groupmetric_2panel.html:48:1 (groupmetric_2panel.Rd:22): Warning: <table> lacks "summary" attribute
+integral.html:4:1 (integral.Rd:5): Warning: <link> inserting "type" attribute
+integral.html:12:1 (integral.Rd:5): Warning: <script> proprietary attribute "onload"
+integral.html:12:1 (integral.Rd:5): Warning: <script> inserting "type" attribute
+integral.html:17:1 (integral.Rd:5): Warning: <table> lacks "summary" attribute
+integral.html:37:1 (integral.Rd:11): Warning: <table> lacks "summary" attribute
+logistic.html:4:1 (logistic.Rd:5): Warning: <link> inserting "type" attribute
+logistic.html:12:1 (logistic.Rd:5): Warning: <script> proprietary attribute "onload"
+logistic.html:12:1 (logistic.Rd:5): Warning: <script> inserting "type" attribute
+logistic.html:17:1 (logistic.Rd:5): Warning: <table> lacks "summary" attribute
+logistic.html:35:1 (logistic.Rd:10): Warning: <table> lacks "summary" attribute
+logit.html:4:1 (logit.Rd:5): Warning: <link> inserting "type" attribute
+logit.html:12:1 (logit.Rd:5): Warning: <script> proprietary attribute "onload"
+logit.html:12:1 (logit.Rd:5): Warning: <script> inserting "type" attribute
+logit.html:17:1 (logit.Rd:5): Warning: <table> lacks "summary" attribute
+logit.html:35:1 (logit.Rd:10): Warning: <table> lacks "summary" attribute
+phs_colours.html:4:1 (phs_colours.Rd:5): Warning: <link> inserting "type" attribute
+phs_colours.html:12:1 (phs_colours.Rd:5): Warning: <script> proprietary attribute "onload"
+phs_colours.html:12:1 (phs_colours.Rd:5): Warning: <script> inserting "type" attribute
+phs_colours.html:17:1 (phs_colours.Rd:5): Warning: <table> lacks "summary" attribute
+phs_colours.html:36:1 (phs_colours.Rd:10): Warning: <table> lacks "summary" attribute
+plot.sparraCAL.html:4:1 (plot.sparraCAL.Rd:5): Warning: <link> inserting "type" attribute
+plot.sparraCAL.html:12:1 (plot.sparraCAL.Rd:5): Warning: <script> proprietary attribute "onload"
+plot.sparraCAL.html:12:1 (plot.sparraCAL.Rd:5): Warning: <script> inserting "type" attribute
+plot.sparraCAL.html:17:1 (plot.sparraCAL.Rd:5): Warning: <table> lacks "summary" attribute
+plot.sparraCAL.html:42:1 (plot.sparraCAL.Rd:16): Warning: <table> lacks "summary" attribute
+plot.sparraPRC.html:4:1 (plot.sparraPRC.Rd:5): Warning: <link> inserting "type" attribute
+plot.sparraPRC.html:12:1 (plot.sparraPRC.Rd:5): Warning: <script> proprietary attribute "onload"
+plot.sparraPRC.html:12:1 (plot.sparraPRC.Rd:5): Warning: <script> inserting "type" attribute
+plot.sparraPRC.html:17:1 (plot.sparraPRC.Rd:5): Warning: <table> lacks "summary" attribute
+plot.sparraPRC.html:41:1 (plot.sparraPRC.Rd:15): Warning: <table> lacks "summary" attribute
+plot.sparraROC.html:4:1 (plot.sparraROC.Rd:5): Warning: <link> inserting "type" attribute
+plot.sparraROC.html:12:1 (plot.sparraROC.Rd:5): Warning: <script> proprietary attribute "onload"
+plot.sparraROC.html:12:1 (plot.sparraROC.Rd:5): Warning: <script> inserting "type" attribute
+plot.sparraROC.html:17:1 (plot.sparraROC.Rd:5): Warning: <table> lacks "summary" attribute
+plot.sparraROC.html:41:1 (plot.sparraROC.Rd:15): Warning: <table> lacks "summary" attribute
+plot_decomp.html:4:1 (plot_decomp.Rd:5): Warning: <link> inserting "type" attribute
+plot_decomp.html:12:1 (plot_decomp.Rd:5): Warning: <script> proprietary attribute "onload"
+plot_decomp.html:12:1 (plot_decomp.Rd:5): Warning: <script> inserting "type" attribute
+plot_decomp.html:17:1 (plot_decomp.Rd:5): Warning: <table> lacks "summary" attribute
+plot_decomp.html:35:1 (plot_decomp.Rd:10): Warning: <table> lacks "summary" attribute
+prc_2panel.html:4:1 (prc_2panel.Rd:5): Warning: <link> inserting "type" attribute
+prc_2panel.html:12:1 (prc_2panel.Rd:5): Warning: <script> proprietary attribute "onload"
+prc_2panel.html:12:1 (prc_2panel.Rd:5): Warning: <script> inserting "type" attribute
+prc_2panel.html:17:1 (prc_2panel.Rd:5): Warning: <table> lacks "summary" attribute
+prc_2panel.html:44:1 (prc_2panel.Rd:18): Warning: <table> lacks "summary" attribute
+roc_2panel.html:4:1 (roc_2panel.Rd:5): Warning: <link> inserting "type" attribute
+roc_2panel.html:12:1 (roc_2panel.Rd:5): Warning: <script> proprietary attribute "onload"
+roc_2panel.html:12:1 (roc_2panel.Rd:5): Warning: <script> inserting "type" attribute
+roc_2panel.html:17:1 (roc_2panel.Rd:5): Warning: <table> lacks "summary" attribute
+roc_2panel.html:45:1 (roc_2panel.Rd:19): Warning: <table> lacks "summary" attribute
+sim_pop_data.html:4:1 (sim_pop_data.Rd:5): Warning: <link> inserting "type" attribute
+sim_pop_data.html:12:1 (sim_pop_data.Rd:5): Warning: <script> proprietary attribute "onload"
+sim_pop_data.html:12:1 (sim_pop_data.Rd:5): Warning: <script> inserting "type" attribute
+sim_pop_data.html:17:1 (sim_pop_data.Rd:5): Warning: <table> lacks "summary" attribute
+sim_pop_data.html:44:1 (sim_pop_data.Rd:19): Warning: <table> lacks "summary" attribute
+* checking for non-standard things in the check directory ... OK
+* checking for detritus in the temp directory ... OK
 * DONE
-Status: OK
+Status: 1 NOTE

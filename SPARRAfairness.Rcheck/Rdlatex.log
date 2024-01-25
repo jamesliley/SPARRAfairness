@@ -1,11 +1,12 @@
 Hmm ... looks like a package
+Converting parsed Rd's to LaTeX ..
+Creating pdf output from LaTeX ...
 
 This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex)
  restricted \write18 enabled.
 entering extended mode
 LaTeX2e <2020-10-01> patch level 4
-L3 programming layer <2021-02-18>
-(./Rd2.tex
+L3 programming layer <2021-02-18> (./Rd2.tex
 (/usr/local/texlive/2021/texmf-dist/tex/latex/base/book.cls
 Document Class: book 2020/04/10 v1.4m Standard LaTeX document class
 (/usr/local/texlive/2021/texmf-dist/tex/latex/base/bk10.clo))
@@ -17,6 +18,16 @@ Document Class: book 2020/04/10 v1.4m Standard LaTeX document class
 (/usr/local/texlive/2021/texmf-dist/tex/latex/tools/verbatim.sty)
 (/usr/local/texlive/2021/texmf-dist/tex/latex/url/url.sty)
 (/usr/local/texlive/2021/texmf-dist/tex/latex/base/textcomp.sty)
+(/usr/local/texlive/2021/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2021/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/local/texlive/2021/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/local/texlive/2021/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/local/texlive/2021/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/amsfonts.sty)
+(/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/amssymb.sty)
+(/usr/local/texlive/2021/texmf-dist/tex/latex/jknapltx/mathrsfs.sty)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/iftex/iftex.sty)
 (/usr/local/texlive/2021/texmf-dist/tex/latex/base/fontenc.sty)
 (/usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/times.sty)
 (/usr/local/texlive/2021/texmf-dist/tex/latex/inconsolata/zi4.sty
@@ -30,7 +41,6 @@ Document Class: book 2020/04/10 v1.4m Standard LaTeX document class
 (/usr/local/texlive/2021/texmf-dist/tex/latex/graphics-def/pdftex.def))
 (/usr/local/texlive/2021/texmf-dist/tex/latex/hyperref/hyperref.sty
 (/usr/local/texlive/2021/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)
-(/usr/local/texlive/2021/texmf-dist/tex/generic/iftex/iftex.sty)
 (/usr/local/texlive/2021/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
 (/usr/local/texlive/2021/texmf-dist/tex/generic/infwarerr/infwarerr.sty))
 (/usr/local/texlive/2021/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty)
@@ -53,16 +63,7 @@ Document Class: book 2020/04/10 v1.4m Standard LaTeX document class
 (/usr/local/texlive/2021/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 
 (/usr/local/texlive/2021/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
-)))
-
-Package hyperref Warning: Option `hyperindex' has already been used,
-(hyperref)                setting the option has no effect on input line 377.
-
-
-Package hyperref Warning: Option `pagebackref' has already been used,
-(hyperref)                setting the option has no effect on input line 377.
-
-) (/usr/local/texlive/2021/texmf-dist/tex/latex/base/makeidx.sty)
+)))) (/usr/local/texlive/2021/texmf-dist/tex/latex/base/makeidx.sty)
 (/usr/local/texlive/2021/texmf-dist/tex/latex/base/inputenc.sty)
 Writing index file Rd2.idx
 (/usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/t1ptm.fd)
@@ -74,35 +75,41 @@ No file Rd2.aux.
 (/usr/local/texlive/2021/texmf-dist/tex/latex/refcount/refcount.sty)
 (/usr/local/texlive/2021/texmf-dist/tex/generic/gettitlestring/gettitlestring.s
 ty)) (/usr/local/texlive/2021/texmf-dist/tex/latex/inconsolata/t1zi4.fd)
+(/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsb.fd)
+(/usr/local/texlive/2021/texmf-dist/tex/latex/jknapltx/ursfs.fd)
 (/usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/t1phv.fd) [1{/usr/local/te
 xlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (1.39984pt too wide) in paragraph at lines 77--77
+Overfull \hbox (1.39984pt too wide) in paragraph at lines 79--79
  []  \T1/zi4/m/n/10 cutoffs = seq(min(scores, na.rm = TRUE), max(scores, na.rm 
 = TRUE), length = 100),[] 
 [2]
-Overfull \hbox (1.39984pt too wide) in paragraph at lines 133--133
+Overfull \hbox (1.39984pt too wide) in paragraph at lines 135--135
  []  \T1/zi4/m/n/10 cutoffs = seq(min(scores, na.rm = TRUE), max(scores, na.rm 
 = TRUE), length = 100),[] 
-[3] [4] [5] (/usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/ts1ptm.fd)
-Overfull \hbox (69.51772pt too wide) in paragraph at lines 327--329
-\T1/ptm/m/n/10 ues of U  are dis-tributed as though they were in group G=g (and
-, op-tion-ally, had  val-ues X=x, but whose value of G is g\TS1/ptm/m/n/10 ' 
+[3] [4] [5] (/usr/local/texlive/2021/texmf-dist/tex/latex/inconsolata/ts1zi4.fd
+)
+Overfull \hbox (578.92717pt too wide) in paragraph at lines 329--331
+[]\T1/ptm/m/n/10 This can be in-ter-preted as: \T1/zi4/m/n/10 the distribution 
+of values of Yhat amongst indivdiduals whose values of U  are distributed as th
+ough they were in group G=g (and, optionally, had  values X=x, but whose value 
+of G is g\TS1/zi4/m/n/10 ' 
 [6]
-Overfull \hbox (5.25328pt too wide) in paragraph at lines 386--386
+Overfull \hbox (5.25328pt too wide) in paragraph at lines 388--388
  []\T1/zi4/m/n/9 struct_Yhat=function(u,x,n) (runif(n,0,x) + runif(n,0,u))/2 # 
 Yhat|X,N ~ (U(0,X) + U(0,U))/2[] 
-(/usr/local/texlive/2021/texmf-dist/tex/latex/inconsolata/ts1zi4.fd)
-Overfull \hbox (15.74715pt too wide) in paragraph at lines 400--400
+
+Overfull \hbox (15.74715pt too wide) in paragraph at lines 402--402
  []\T1/zi4/m/n/9 #  struct_Yhat=function(u,x,n) (runif(n,0,1) + runif(n,0,u))/2
  # Yhat|X,N ~ (U(0,1) + U(0,U))/2[] 
 [7]
 Underfull \vbox (badness 10000) has occurred while \output is active [8]
 [9] [10] [11] [12] [13] [14] [15] [16] [17] [18] [19] [20] [21] [22] [23]
-[24] [25]
+[24] [25] (/usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/ts1ptm.fd)
 No file Rd2.ind.
 [26]
-(/private/var/folders/tr/sybyd51n7jx27k9mvh563hq80000gq/T/RtmpH3DgKx/Rd2pdf7b68
-3856532d/Rd2.aux)
+(/private/var/folders/tr/sybyd51n7jx27k9mvh563hq80000gq/T/RtmppE7Jsy/Rd2pdfb801
+42a9ecc8/Rd2.aux)
 
 Package rerunfilecheck Warning: File `Rd2.out' has changed.
 (rerunfilecheck)                Rerun to get outlines right
@@ -118,129 +125,7 @@ s/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1
 /urw/times/utmb8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times
 /utmr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmr8a.pf
 b></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Rd2.pdf (26 pages, 123917 bytes).
-Transcript written on Rd2.log.
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex)
- restricted \write18 enabled.
-entering extended mode
-LaTeX2e <2020-10-01> patch level 4
-L3 programming layer <2021-02-18>
-(./Rd2.tex
-(/usr/local/texlive/2021/texmf-dist/tex/latex/base/book.cls
-Document Class: book 2020/04/10 v1.4m Standard LaTeX document class
-(/usr/local/texlive/2021/texmf-dist/tex/latex/base/bk10.clo))
-(/Library/Frameworks/R.framework/Resources/share/texmf/tex/latex/Rd.sty
-(/usr/local/texlive/2021/texmf-dist/tex/latex/base/ifthen.sty)
-(/usr/local/texlive/2021/texmf-dist/tex/latex/tools/longtable.sty)
-(/usr/local/texlive/2021/texmf-dist/tex/latex/tools/bm.sty)
-(/usr/local/texlive/2021/texmf-dist/tex/latex/base/alltt.sty)
-(/usr/local/texlive/2021/texmf-dist/tex/latex/tools/verbatim.sty)
-(/usr/local/texlive/2021/texmf-dist/tex/latex/url/url.sty)
-(/usr/local/texlive/2021/texmf-dist/tex/latex/base/textcomp.sty)
-(/usr/local/texlive/2021/texmf-dist/tex/latex/base/fontenc.sty)
-(/usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/times.sty)
-(/usr/local/texlive/2021/texmf-dist/tex/latex/inconsolata/zi4.sty
-`inconsolata-zi4' v1.12, 2019/05/17 Text macros for Inconsolata (msharpe)
-(/usr/local/texlive/2021/texmf-dist/tex/latex/xkeyval/xkeyval.sty
-(/usr/local/texlive/2021/texmf-dist/tex/generic/xkeyval/xkeyval.tex
-(/usr/local/texlive/2021/texmf-dist/tex/generic/xkeyval/xkvutils.tex
-(/usr/local/texlive/2021/texmf-dist/tex/generic/xkeyval/keyval.tex)))))
-(/usr/local/texlive/2021/texmf-dist/tex/latex/graphics/color.sty
-(/usr/local/texlive/2021/texmf-dist/tex/latex/graphics-cfg/color.cfg)
-(/usr/local/texlive/2021/texmf-dist/tex/latex/graphics-def/pdftex.def))
-(/usr/local/texlive/2021/texmf-dist/tex/latex/hyperref/hyperref.sty
-(/usr/local/texlive/2021/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)
-(/usr/local/texlive/2021/texmf-dist/tex/generic/iftex/iftex.sty)
-(/usr/local/texlive/2021/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
-(/usr/local/texlive/2021/texmf-dist/tex/generic/infwarerr/infwarerr.sty))
-(/usr/local/texlive/2021/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty)
-(/usr/local/texlive/2021/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty)
-(/usr/local/texlive/2021/texmf-dist/tex/generic/pdfescape/pdfescape.sty)
-(/usr/local/texlive/2021/texmf-dist/tex/latex/hycolor/hycolor.sty)
-(/usr/local/texlive/2021/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty)
-(/usr/local/texlive/2021/texmf-dist/tex/latex/auxhook/auxhook.sty)
-(/usr/local/texlive/2021/texmf-dist/tex/latex/kvoptions/kvoptions.sty)
-(/usr/local/texlive/2021/texmf-dist/tex/latex/hyperref/pd1enc.def)
-(/usr/local/texlive/2021/texmf-dist/tex/latex/hyperref/hyperref-langpatches.def
-) (/usr/local/texlive/2021/texmf-dist/tex/generic/intcalc/intcalc.sty)
-(/usr/local/texlive/2021/texmf-dist/tex/generic/etexcmds/etexcmds.sty)
-(/usr/local/texlive/2021/texmf-dist/tex/latex/hyperref/puenc.def)
-(/usr/local/texlive/2021/texmf-dist/tex/generic/bitset/bitset.sty
-(/usr/local/texlive/2021/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty))
-(/usr/local/texlive/2021/texmf-dist/tex/latex/base/atbegshi-ltx.sty))
-(/usr/local/texlive/2021/texmf-dist/tex/latex/hyperref/hpdftex.def
-(/usr/local/texlive/2021/texmf-dist/tex/latex/base/atveryend-ltx.sty)
-(/usr/local/texlive/2021/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
-
-(/usr/local/texlive/2021/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
-)))
-
-Package hyperref Warning: Option `hyperindex' has already been used,
-(hyperref)                setting the option has no effect on input line 377.
-
-
-Package hyperref Warning: Option `pagebackref' has already been used,
-(hyperref)                setting the option has no effect on input line 377.
-
-) (/usr/local/texlive/2021/texmf-dist/tex/latex/base/makeidx.sty)
-(/usr/local/texlive/2021/texmf-dist/tex/latex/base/inputenc.sty)
-Writing index file Rd2.idx
-(/usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/t1ptm.fd)
-(/usr/local/texlive/2021/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def)
-(/private/var/folders/tr/sybyd51n7jx27k9mvh563hq80000gq/T/RtmpH3DgKx/Rd2pdf7b68
-3856532d/Rd2.aux)
-(/usr/local/texlive/2021/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
-[Loading MPS to PDF converter (version 2006.09.02).]
-) (/usr/local/texlive/2021/texmf-dist/tex/latex/hyperref/nameref.sty
-(/usr/local/texlive/2021/texmf-dist/tex/latex/refcount/refcount.sty)
-(/usr/local/texlive/2021/texmf-dist/tex/generic/gettitlestring/gettitlestring.s
-ty))
-(/private/var/folders/tr/sybyd51n7jx27k9mvh563hq80000gq/T/RtmpH3DgKx/Rd2pdf7b68
-3856532d/Rd2.out)
-(/private/var/folders/tr/sybyd51n7jx27k9mvh563hq80000gq/T/RtmpH3DgKx/Rd2pdf7b68
-3856532d/Rd2.out)
-(/usr/local/texlive/2021/texmf-dist/tex/latex/inconsolata/t1zi4.fd)
-(/usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/t1phv.fd)
-(/private/var/folders/tr/sybyd51n7jx27k9mvh563hq80000gq/T/RtmpH3DgKx/Rd2pdf7b68
-3856532d/Rd2.toc [1{/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/p
-dftex.map}]) [2]
-Overfull \hbox (1.39984pt too wide) in paragraph at lines 77--77
- []  \T1/zi4/m/n/10 cutoffs = seq(min(scores, na.rm = TRUE), max(scores, na.rm 
-= TRUE), length = 100),[] 
-[3]
-Overfull \hbox (1.39984pt too wide) in paragraph at lines 133--133
- []  \T1/zi4/m/n/10 cutoffs = seq(min(scores, na.rm = TRUE), max(scores, na.rm 
-= TRUE), length = 100),[] 
-[4] [5] [6] (/usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/ts1ptm.fd)
-Overfull \hbox (69.51772pt too wide) in paragraph at lines 327--329
-\T1/ptm/m/n/10 ues of U  are dis-tributed as though they were in group G=g (and
-, op-tion-ally, had  val-ues X=x, but whose value of G is g\TS1/ptm/m/n/10 ' 
-[7]
-Overfull \hbox (5.25328pt too wide) in paragraph at lines 386--386
- []\T1/zi4/m/n/9 struct_Yhat=function(u,x,n) (runif(n,0,x) + runif(n,0,u))/2 # 
-Yhat|X,N ~ (U(0,X) + U(0,U))/2[] 
-(/usr/local/texlive/2021/texmf-dist/tex/latex/inconsolata/ts1zi4.fd)
-Overfull \hbox (15.74715pt too wide) in paragraph at lines 400--400
- []\T1/zi4/m/n/9 #  struct_Yhat=function(u,x,n) (runif(n,0,1) + runif(n,0,u))/2
- # Yhat|X,N ~ (U(0,1) + U(0,U))/2[] 
-[8]
-Underfull \vbox (badness 10000) has occurred while \output is active [9]
-[10] [11] [12] [13] [14] [15] [16] [17] [18] [19] [20] [21] [22] [23] [24]
-[25] [26]
-No file Rd2.ind.
-[27]
-(/private/var/folders/tr/sybyd51n7jx27k9mvh563hq80000gq/T/RtmpH3DgKx/Rd2pdf7b68
-3856532d/Rd2.aux) )
-(see the transcript file for additional information){/usr/local/texlive/2021/te
-xmf-dist/fonts/enc/dvips/inconsolata/i4-ts1.enc}{/usr/local/texlive/2021/texmf-
-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc/
-dvips/inconsolata/i4-t1-0.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/p
-ublic/inconsolata/Inconsolata-zi4r.pfb></usr/local/texlive/2021/texmf-dist/font
-s/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1
-/urw/times/utmb8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times
-/utmr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmr8a.pf
-b></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Rd2.pdf (27 pages, 127848 bytes).
+Output written on Rd2.pdf (26 pages, 124052 bytes).
 Transcript written on Rd2.log.
 This is makeindex, version 2.15 [TeX Live 2021] (kpathsea + Thai support).
 Scanning input file Rd2.idx....done (35 entries accepted, 0 rejected).
@@ -252,8 +137,7 @@ This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded forma
  restricted \write18 enabled.
 entering extended mode
 LaTeX2e <2020-10-01> patch level 4
-L3 programming layer <2021-02-18>
-(./Rd2.tex
+L3 programming layer <2021-02-18> (./Rd2.tex
 (/usr/local/texlive/2021/texmf-dist/tex/latex/base/book.cls
 Document Class: book 2020/04/10 v1.4m Standard LaTeX document class
 (/usr/local/texlive/2021/texmf-dist/tex/latex/base/bk10.clo))
@@ -265,6 +149,16 @@ Document Class: book 2020/04/10 v1.4m Standard LaTeX document class
 (/usr/local/texlive/2021/texmf-dist/tex/latex/tools/verbatim.sty)
 (/usr/local/texlive/2021/texmf-dist/tex/latex/url/url.sty)
 (/usr/local/texlive/2021/texmf-dist/tex/latex/base/textcomp.sty)
+(/usr/local/texlive/2021/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2021/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/local/texlive/2021/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/local/texlive/2021/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/local/texlive/2021/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/amsfonts.sty)
+(/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/amssymb.sty)
+(/usr/local/texlive/2021/texmf-dist/tex/latex/jknapltx/mathrsfs.sty)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/iftex/iftex.sty)
 (/usr/local/texlive/2021/texmf-dist/tex/latex/base/fontenc.sty)
 (/usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/times.sty)
 (/usr/local/texlive/2021/texmf-dist/tex/latex/inconsolata/zi4.sty
@@ -278,7 +172,6 @@ Document Class: book 2020/04/10 v1.4m Standard LaTeX document class
 (/usr/local/texlive/2021/texmf-dist/tex/latex/graphics-def/pdftex.def))
 (/usr/local/texlive/2021/texmf-dist/tex/latex/hyperref/hyperref.sty
 (/usr/local/texlive/2021/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)
-(/usr/local/texlive/2021/texmf-dist/tex/generic/iftex/iftex.sty)
 (/usr/local/texlive/2021/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
 (/usr/local/texlive/2021/texmf-dist/tex/generic/infwarerr/infwarerr.sty))
 (/usr/local/texlive/2021/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty)
@@ -301,64 +194,61 @@ Document Class: book 2020/04/10 v1.4m Standard LaTeX document class
 (/usr/local/texlive/2021/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 
 (/usr/local/texlive/2021/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
-)))
-
-Package hyperref Warning: Option `hyperindex' has already been used,
-(hyperref)                setting the option has no effect on input line 377.
-
-
-Package hyperref Warning: Option `pagebackref' has already been used,
-(hyperref)                setting the option has no effect on input line 377.
-
-) (/usr/local/texlive/2021/texmf-dist/tex/latex/base/makeidx.sty)
+)))) (/usr/local/texlive/2021/texmf-dist/tex/latex/base/makeidx.sty)
 (/usr/local/texlive/2021/texmf-dist/tex/latex/base/inputenc.sty)
 Writing index file Rd2.idx
 (/usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/t1ptm.fd)
 (/usr/local/texlive/2021/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def)
-(/private/var/folders/tr/sybyd51n7jx27k9mvh563hq80000gq/T/RtmpH3DgKx/Rd2pdf7b68
-3856532d/Rd2.aux)
+(/private/var/folders/tr/sybyd51n7jx27k9mvh563hq80000gq/T/RtmppE7Jsy/Rd2pdfb801
+42a9ecc8/Rd2.aux)
 (/usr/local/texlive/2021/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 ) (/usr/local/texlive/2021/texmf-dist/tex/latex/hyperref/nameref.sty
 (/usr/local/texlive/2021/texmf-dist/tex/latex/refcount/refcount.sty)
 (/usr/local/texlive/2021/texmf-dist/tex/generic/gettitlestring/gettitlestring.s
 ty))
-(/private/var/folders/tr/sybyd51n7jx27k9mvh563hq80000gq/T/RtmpH3DgKx/Rd2pdf7b68
-3856532d/Rd2.out)
-(/private/var/folders/tr/sybyd51n7jx27k9mvh563hq80000gq/T/RtmpH3DgKx/Rd2pdf7b68
-3856532d/Rd2.out)
+(/private/var/folders/tr/sybyd51n7jx27k9mvh563hq80000gq/T/RtmppE7Jsy/Rd2pdfb801
+42a9ecc8/Rd2.out)
+(/private/var/folders/tr/sybyd51n7jx27k9mvh563hq80000gq/T/RtmppE7Jsy/Rd2pdfb801
+42a9ecc8/Rd2.out)
 (/usr/local/texlive/2021/texmf-dist/tex/latex/inconsolata/t1zi4.fd)
+(/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsb.fd)
+(/usr/local/texlive/2021/texmf-dist/tex/latex/jknapltx/ursfs.fd)
 (/usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/t1phv.fd)
-(/private/var/folders/tr/sybyd51n7jx27k9mvh563hq80000gq/T/RtmpH3DgKx/Rd2pdf7b68
-3856532d/Rd2.toc [1{/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/p
+(/private/var/folders/tr/sybyd51n7jx27k9mvh563hq80000gq/T/RtmppE7Jsy/Rd2pdfb801
+42a9ecc8/Rd2.toc [1{/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/p
 dftex.map}]) [2]
-Overfull \hbox (1.39984pt too wide) in paragraph at lines 77--77
+Overfull \hbox (1.39984pt too wide) in paragraph at lines 79--79
  []  \T1/zi4/m/n/10 cutoffs = seq(min(scores, na.rm = TRUE), max(scores, na.rm 
 = TRUE), length = 100),[] 
 [3]
-Overfull \hbox (1.39984pt too wide) in paragraph at lines 133--133
+Overfull \hbox (1.39984pt too wide) in paragraph at lines 135--135
  []  \T1/zi4/m/n/10 cutoffs = seq(min(scores, na.rm = TRUE), max(scores, na.rm 
 = TRUE), length = 100),[] 
-[4] [5] [6] (/usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/ts1ptm.fd)
-Overfull \hbox (69.51772pt too wide) in paragraph at lines 327--329
-\T1/ptm/m/n/10 ues of U  are dis-tributed as though they were in group G=g (and
-, op-tion-ally, had  val-ues X=x, but whose value of G is g\TS1/ptm/m/n/10 ' 
+[4] [5] [6] (/usr/local/texlive/2021/texmf-dist/tex/latex/inconsolata/ts1zi4.fd
+)
+Overfull \hbox (578.92717pt too wide) in paragraph at lines 329--331
+[]\T1/ptm/m/n/10 This can be in-ter-preted as: \T1/zi4/m/n/10 the distribution 
+of values of Yhat amongst indivdiduals whose values of U  are distributed as th
+ough they were in group G=g (and, optionally, had  values X=x, but whose value 
+of G is g\TS1/zi4/m/n/10 ' 
 [7]
-Overfull \hbox (5.25328pt too wide) in paragraph at lines 386--386
+Overfull \hbox (5.25328pt too wide) in paragraph at lines 388--388
  []\T1/zi4/m/n/9 struct_Yhat=function(u,x,n) (runif(n,0,x) + runif(n,0,u))/2 # 
 Yhat|X,N ~ (U(0,X) + U(0,U))/2[] 
-(/usr/local/texlive/2021/texmf-dist/tex/latex/inconsolata/ts1zi4.fd)
-Overfull \hbox (15.74715pt too wide) in paragraph at lines 400--400
+
+Overfull \hbox (15.74715pt too wide) in paragraph at lines 402--402
  []\T1/zi4/m/n/9 #  struct_Yhat=function(u,x,n) (runif(n,0,1) + runif(n,0,u))/2
  # Yhat|X,N ~ (U(0,1) + U(0,U))/2[] 
 [8]
 Underfull \vbox (badness 10000) has occurred while \output is active [9]
 [10] [11] [12] [13] [14] [15] [16] [17] [18] [19] [20] [21] [22] [23] [24]
-[25] [26]
-(/private/var/folders/tr/sybyd51n7jx27k9mvh563hq80000gq/T/RtmpH3DgKx/Rd2pdf7b68
-3856532d/Rd2.ind [27] [28])
-(/private/var/folders/tr/sybyd51n7jx27k9mvh563hq80000gq/T/RtmpH3DgKx/Rd2pdf7b68
-3856532d/Rd2.aux)
+[25] [26] (/usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/ts1ptm.fd)
+(/private/var/folders/tr/sybyd51n7jx27k9mvh563hq80000gq/T/RtmppE7Jsy/Rd2pdfb801
+42a9ecc8/Rd2.ind [27] [28])
+(/private/var/folders/tr/sybyd51n7jx27k9mvh563hq80000gq/T/RtmppE7Jsy/Rd2pdfb801
+42a9ecc8/Rd2.aux)
 
 Package rerunfilecheck Warning: File `Rd2.out' has changed.
 (rerunfilecheck)                Rerun to get outlines right
@@ -375,7 +265,7 @@ s/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2021/texmf-dist/fonts
 urw/times/utmb8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/
 utmr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmr8a.pfb
 ></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Rd2.pdf (28 pages, 137072 bytes).
+Output written on Rd2.pdf (28 pages, 137187 bytes).
 Transcript written on Rd2.log.
 This is makeindex, version 2.15 [TeX Live 2021] (kpathsea + Thai support).
 Scanning input file Rd2.idx....done (35 entries accepted, 0 rejected).
@@ -387,8 +277,7 @@ This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded forma
  restricted \write18 enabled.
 entering extended mode
 LaTeX2e <2020-10-01> patch level 4
-L3 programming layer <2021-02-18>
-(./Rd2.tex
+L3 programming layer <2021-02-18> (./Rd2.tex
 (/usr/local/texlive/2021/texmf-dist/tex/latex/base/book.cls
 Document Class: book 2020/04/10 v1.4m Standard LaTeX document class
 (/usr/local/texlive/2021/texmf-dist/tex/latex/base/bk10.clo))
@@ -400,6 +289,16 @@ Document Class: book 2020/04/10 v1.4m Standard LaTeX document class
 (/usr/local/texlive/2021/texmf-dist/tex/latex/tools/verbatim.sty)
 (/usr/local/texlive/2021/texmf-dist/tex/latex/url/url.sty)
 (/usr/local/texlive/2021/texmf-dist/tex/latex/base/textcomp.sty)
+(/usr/local/texlive/2021/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2021/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/local/texlive/2021/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/local/texlive/2021/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/local/texlive/2021/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/amsfonts.sty)
+(/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/amssymb.sty)
+(/usr/local/texlive/2021/texmf-dist/tex/latex/jknapltx/mathrsfs.sty)
+(/usr/local/texlive/2021/texmf-dist/tex/generic/iftex/iftex.sty)
 (/usr/local/texlive/2021/texmf-dist/tex/latex/base/fontenc.sty)
 (/usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/times.sty)
 (/usr/local/texlive/2021/texmf-dist/tex/latex/inconsolata/zi4.sty
@@ -413,7 +312,6 @@ Document Class: book 2020/04/10 v1.4m Standard LaTeX document class
 (/usr/local/texlive/2021/texmf-dist/tex/latex/graphics-def/pdftex.def))
 (/usr/local/texlive/2021/texmf-dist/tex/latex/hyperref/hyperref.sty
 (/usr/local/texlive/2021/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)
-(/usr/local/texlive/2021/texmf-dist/tex/generic/iftex/iftex.sty)
 (/usr/local/texlive/2021/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
 (/usr/local/texlive/2021/texmf-dist/tex/generic/infwarerr/infwarerr.sty))
 (/usr/local/texlive/2021/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty)
@@ -436,64 +334,61 @@ Document Class: book 2020/04/10 v1.4m Standard LaTeX document class
 (/usr/local/texlive/2021/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 
 (/usr/local/texlive/2021/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
-)))
-
-Package hyperref Warning: Option `hyperindex' has already been used,
-(hyperref)                setting the option has no effect on input line 377.
-
-
-Package hyperref Warning: Option `pagebackref' has already been used,
-(hyperref)                setting the option has no effect on input line 377.
-
-) (/usr/local/texlive/2021/texmf-dist/tex/latex/base/makeidx.sty)
+)))) (/usr/local/texlive/2021/texmf-dist/tex/latex/base/makeidx.sty)
 (/usr/local/texlive/2021/texmf-dist/tex/latex/base/inputenc.sty)
 Writing index file Rd2.idx
 (/usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/t1ptm.fd)
 (/usr/local/texlive/2021/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def)
-(/private/var/folders/tr/sybyd51n7jx27k9mvh563hq80000gq/T/RtmpH3DgKx/Rd2pdf7b68
-3856532d/Rd2.aux)
+(/private/var/folders/tr/sybyd51n7jx27k9mvh563hq80000gq/T/RtmppE7Jsy/Rd2pdfb801
+42a9ecc8/Rd2.aux)
 (/usr/local/texlive/2021/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 ) (/usr/local/texlive/2021/texmf-dist/tex/latex/hyperref/nameref.sty
 (/usr/local/texlive/2021/texmf-dist/tex/latex/refcount/refcount.sty)
 (/usr/local/texlive/2021/texmf-dist/tex/generic/gettitlestring/gettitlestring.s
 ty))
-(/private/var/folders/tr/sybyd51n7jx27k9mvh563hq80000gq/T/RtmpH3DgKx/Rd2pdf7b68
-3856532d/Rd2.out)
-(/private/var/folders/tr/sybyd51n7jx27k9mvh563hq80000gq/T/RtmpH3DgKx/Rd2pdf7b68
-3856532d/Rd2.out)
+(/private/var/folders/tr/sybyd51n7jx27k9mvh563hq80000gq/T/RtmppE7Jsy/Rd2pdfb801
+42a9ecc8/Rd2.out)
+(/private/var/folders/tr/sybyd51n7jx27k9mvh563hq80000gq/T/RtmppE7Jsy/Rd2pdfb801
+42a9ecc8/Rd2.out)
 (/usr/local/texlive/2021/texmf-dist/tex/latex/inconsolata/t1zi4.fd)
+(/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsb.fd)
+(/usr/local/texlive/2021/texmf-dist/tex/latex/jknapltx/ursfs.fd)
 (/usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/t1phv.fd)
-(/private/var/folders/tr/sybyd51n7jx27k9mvh563hq80000gq/T/RtmpH3DgKx/Rd2pdf7b68
-3856532d/Rd2.toc [1{/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/p
+(/private/var/folders/tr/sybyd51n7jx27k9mvh563hq80000gq/T/RtmppE7Jsy/Rd2pdfb801
+42a9ecc8/Rd2.toc [1{/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/p
 dftex.map}]) [2]
-Overfull \hbox (1.39984pt too wide) in paragraph at lines 77--77
+Overfull \hbox (1.39984pt too wide) in paragraph at lines 79--79
  []  \T1/zi4/m/n/10 cutoffs = seq(min(scores, na.rm = TRUE), max(scores, na.rm 
 = TRUE), length = 100),[] 
 [3]
-Overfull \hbox (1.39984pt too wide) in paragraph at lines 133--133
+Overfull \hbox (1.39984pt too wide) in paragraph at lines 135--135
  []  \T1/zi4/m/n/10 cutoffs = seq(min(scores, na.rm = TRUE), max(scores, na.rm 
 = TRUE), length = 100),[] 
-[4] [5] [6] (/usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/ts1ptm.fd)
-Overfull \hbox (69.51772pt too wide) in paragraph at lines 327--329
-\T1/ptm/m/n/10 ues of U  are dis-tributed as though they were in group G=g (and
-, op-tion-ally, had  val-ues X=x, but whose value of G is g\TS1/ptm/m/n/10 ' 
+[4] [5] [6] (/usr/local/texlive/2021/texmf-dist/tex/latex/inconsolata/ts1zi4.fd
+)
+Overfull \hbox (578.92717pt too wide) in paragraph at lines 329--331
+[]\T1/ptm/m/n/10 This can be in-ter-preted as: \T1/zi4/m/n/10 the distribution 
+of values of Yhat amongst indivdiduals whose values of U  are distributed as th
+ough they were in group G=g (and, optionally, had  values X=x, but whose value 
+of G is g\TS1/zi4/m/n/10 ' 
 [7]
-Overfull \hbox (5.25328pt too wide) in paragraph at lines 386--386
+Overfull \hbox (5.25328pt too wide) in paragraph at lines 388--388
  []\T1/zi4/m/n/9 struct_Yhat=function(u,x,n) (runif(n,0,x) + runif(n,0,u))/2 # 
 Yhat|X,N ~ (U(0,X) + U(0,U))/2[] 
-(/usr/local/texlive/2021/texmf-dist/tex/latex/inconsolata/ts1zi4.fd)
-Overfull \hbox (15.74715pt too wide) in paragraph at lines 400--400
+
+Overfull \hbox (15.74715pt too wide) in paragraph at lines 402--402
  []\T1/zi4/m/n/9 #  struct_Yhat=function(u,x,n) (runif(n,0,1) + runif(n,0,u))/2
  # Yhat|X,N ~ (U(0,1) + U(0,U))/2[] 
 [8]
 Underfull \vbox (badness 10000) has occurred while \output is active [9]
 [10] [11] [12] [13] [14] [15] [16] [17] [18] [19] [20] [21] [22] [23] [24]
-[25] [26]
-(/private/var/folders/tr/sybyd51n7jx27k9mvh563hq80000gq/T/RtmpH3DgKx/Rd2pdf7b68
-3856532d/Rd2.ind [27] [28])
-(/private/var/folders/tr/sybyd51n7jx27k9mvh563hq80000gq/T/RtmpH3DgKx/Rd2pdf7b68
-3856532d/Rd2.aux) )
+[25] [26] (/usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/ts1ptm.fd)
+(/private/var/folders/tr/sybyd51n7jx27k9mvh563hq80000gq/T/RtmppE7Jsy/Rd2pdfb801
+42a9ecc8/Rd2.ind [27] [28])
+(/private/var/folders/tr/sybyd51n7jx27k9mvh563hq80000gq/T/RtmppE7Jsy/Rd2pdfb801
+42a9ecc8/Rd2.aux) )
 (see the transcript file for additional information){/usr/local/texlive/2021/te
 xmf-dist/fonts/enc/dvips/inconsolata/i4-ts1.enc}{/usr/local/texlive/2021/texmf-
 dist/fonts/enc/dvips/base/8r.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc/
@@ -504,8 +399,8 @@ s/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2021/texmf-dist/fonts
 urw/times/utmb8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/
 utmr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmr8a.pfb
 ></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Rd2.pdf (28 pages, 138044 bytes).
+Output written on Rd2.pdf (28 pages, 138181 bytes).
 Transcript written on Rd2.log.
 Saving output to ‘SPARRAfairness-manual.pdf’ ...
 Done
-You may want to clean up by 'rm -Rf /var/folders/tr/sybyd51n7jx27k9mvh563hq80000gq/T//RtmpH3DgKx/Rd2pdf7b683856532d'
+You may want to clean up by 'rm -Rf /var/folders/tr/sybyd51n7jx27k9mvh563hq80000gq/T//RtmppE7Jsy/Rd2pdfb80142a9ecc8'

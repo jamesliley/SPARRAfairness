@@ -1089,7 +1089,7 @@ build_diff = function(df, xvar) {
   xrange = range(df[xvar])
   
   # Equal-spaced sequence over xvar
-  dfx = data.frame(seq(xrange[1], xrange[2], length = 100)[2:99])
+  dfx = data.frame(seq(xrange[1], xrange[2], length = 500)[2:499])
   
   # Interpolate xvar and yvar at equal-spaced sequence for each model
   df2=data.frame()
@@ -1102,7 +1102,7 @@ build_diff = function(df, xvar) {
     df2=rbind(df2,d0)
   }
   colnames(df2)=c("Model",xvar,xnames)
-  df2$Model=factor(df2$Model)
+  df2$Model=factor(df2$Model,levels=models)
   
   return(df2)
 }
@@ -1767,16 +1767,17 @@ for_breakdown = function(decomp_table, group, threshold,
       linewidth = 0.5)
   }
   
-  
+  ww=which(abs(data_df$xt-data_df$yt)>ldiff)
   p=suppressWarnings( p + 
-    geom_label_repel(size = 1, label = ifelse(abs(xt - yt) > ldiff, names(xt), ""), 
-                     nudge_x = 0.05, nudge_y = 0, box.padding = 0.2) +
+    geom_label_repel(data=data_df[ww,], force=2,
+                     size = 2, label = rownames(data_df)[ww], #ifelse(abs(xt - yt) > ldiff, names(xt), ""), 
+                     nudge_x = 0.05, nudge_y = 0, box.padding = 0.2,label.padding=0.1) +
     xlim(xlimit) + 
     ylim(ylimit) +
     labs(x = "Freq. in all adm.",
          y = paste0("(Freq. with score < ", threshold, ") - (Freq. in all adm.)"),
          title = paste0("Group: ", group)) +
-    theme_minimal() +
+    theme_minimal(base_size=8) +
     guides(color = "none"))
   suppressWarnings(suppressWarnings(print(p)))
   invisible(p)
