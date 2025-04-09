@@ -1,6 +1,6 @@
 # Comments for submission of package SPARRAfairness to CRAN
 
-This is the first submission of this package. 
+This is the second version of this package. 
 
 ## R CMD check results
 

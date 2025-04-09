@@ -1,41 +1,30 @@
-ab                      ab() Shorthand to draw a red x-y line
-adjusted_fdr            adjusted_fdr
-adjusted_for            adjusted_for
-all_data                All data for fairness measures
-build_diff              build_diff Prepares a data frame for a ggplot
-                        object to compare differences using linear
-                        interpolation.
-cal_2panel              cal_2panel Draws calibration curves (with
-                        legend) with a second panel underneath showing
-                        predicted differences.
-counterfactual_yhat     counterfactual_yhat
-dat2mat                 dat2mat
-decomposition_matrix    Decomposition matrix
-demographic_parity      demographic_parity
-drawperson              drawperson
-drawprop                drawprop
-for_breakdown           for_breakdown
-getcal                  getcal()
-getprc                  getprc()
-getroc                  getroc() Comprehensive plotting function for
-                        receiver-operator characteristic curve. Also
-                        calculates AUROC and standard error.
-group_fairness          group_fairness
-groupmetric_2panel      groupmetric_2panel Draws plots of a group
-                        fairness metric with a second panel underneath
-integral                integral() Quick form for trapezoidal
-                        integration over range of x
-logistic                Logistic
-logit                   Logit
-phs_colours             phs_colours
-plot.sparraCAL          Plot function for class sparraCAL
-plot.sparraPRC          Plot function for class above
-plot.sparraROC          Plot function for class sparraROC
-plot_decomp             plot_decomp
-prc_2panel              prc_2panel Draws a PRC curve (with legend) with
-                        a second panel underneath showing precision
-                        difference.
-roc_2panel              roc_2panel Draws a ROC curve (with legend) with
-                        a second panel underneath showing sensitivity
-                        difference.
-sim_pop_data            sim_pop_data
+ab                                                          ab() Shorthand to draw a red x-y line
+adjusted_fdr                                                adjusted_fdr
+adjusted_for                                                adjusted_for
+all_data                                                    All data for fairness measures
+build_diff                                                  build_diff Prepares a data frame for a ggplot object to compare differences using linear interpolation.
+cal_2panel                                                  cal_2panel Draws calibration curves (with legend) with a second panel underneath showing predicted differences.
+counterfactual_yhat                                         counterfactual_yhat
+dat2mat                                                     dat2mat
+decomposition_matrix                                        Decomposition matrix
+demographic_parity                                          demographic_parity
+drawperson                                                  drawperson
+drawprop                                                    drawprop
+for_breakdown                                               for_breakdown
+getcal                                                      getcal()
+getprc                                                      getprc()
+getroc                                                      getroc() Comprehensive plotting function for receiver-operator characteristic curve. Also calculates AUROC and standard
+                                                            error.
+group_fairness                                              group_fairness
+groupmetric_2panel                                          groupmetric_2panel Draws plots of a group fairness metric with a second panel underneath
+integral                                                    integral() Quick form for trapezoidal integration over range of x
+logistic                                                    Logistic
+logit                                                       Logit
+phs_colours                                                 phs_colours
+plot.sparraCAL                                              Plot function for class sparraCAL
+plot.sparraPRC                                              Plot function for class above
+plot.sparraROC                                              Plot function for class sparraROC
+plot_decomp                                                 plot_decomp
+prc_2panel                                                  prc_2panel Draws a PRC curve (with legend) with a second panel underneath showing precision difference.
+roc_2panel                                                  roc_2panel Draws a ROC curve (with legend) with a second panel underneath showing sensitivity difference.
+sim_pop_data                                                sim_pop_data

@@ -2,11 +2,11 @@
 title: "SPARRAfairness example"
 author: "James Liley, Ioanna Thoma"
 date: "`r Sys.Date()`"
-output: rmarkdown::html_vignette
+output: pdf_document
 bibliography: SPARRAfairness.bib
 vignette: >
  %\VignetteIndexEntry{SPARRAfairness example}
- %\VignetteEngine{knitr::knitr}
+ %\VignetteEngine{knitr::rmarkdown}
  %\VignetteEncoding{UTF-8}
 ---
 
@@ -19,7 +19,7 @@ knitr::opts_chunk$set(
 
 ## Introduction
 
-In this vignette, we will demonstrate how to calculate and plot a range of performance metrics for a clinical risk score across demographic groups. We will use both simulated and real data. Please see our manuscript for further details.
+In this vignette, we will demonstrate how to calculate and plot a range of performance metrics for a clinical risk score across demographic groups. We will use both simulated and real data. Please see our manuscript for further details [@thoma24].
 
 Our main risk score of interest is the SPARRA score [@sparrav3], which predicts emergency hospital admission in the coming year given data from electronic health records for the majority of the population of Scotland. We analyse the currently-used SPARRA version 3 score but this package and vignette also allows for analysis of the in-development SPARRA version 4 score [@sparrav4].
 
