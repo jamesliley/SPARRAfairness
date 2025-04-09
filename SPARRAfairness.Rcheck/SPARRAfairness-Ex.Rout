@@ -576,7 +576,7 @@ mainland_island  0.33258825      1.00000000
 > cleanEx()
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  0.688 0.062 0.778 0 0 
+Time elapsed:  0.661 0.058 0.758 0 0 
 > grDevices::dev.off()
 null device 
           1 
