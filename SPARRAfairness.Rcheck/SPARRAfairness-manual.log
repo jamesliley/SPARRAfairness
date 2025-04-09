@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.12.20)  9 APR 2025 09:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.12.20)  9 APR 2025 12:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -332,8 +332,8 @@ File: l3backend-pdftex.def 2021-03-18 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count283
 \l__pdf_internal_box=\box53
 )
-(/private/var/folders/tr/sybyd51n7jx27k9mvh563hq80000gq/T/RtmpLzlESA/Rd2pdf225d
-c0b1a18/Rd2.aux)
+(/private/var/folders/tr/sybyd51n7jx27k9mvh563hq80000gq/T/RtmpOATmy2/Rd2pdf14c5
+4c293d5c/Rd2.aux)
 \openout1 = `Rd2.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
@@ -386,10 +386,10 @@ LaTeX Info: Redefining \ref on input line 8.
 LaTeX Info: Redefining \pageref on input line 8.
 LaTeX Info: Redefining \nameref on input line 8.
 
-(/private/var/folders/tr/sybyd51n7jx27k9mvh563hq80000gq/T/RtmpLzlESA/Rd2pdf225d
-c0b1a18/Rd2.out)
-(/private/var/folders/tr/sybyd51n7jx27k9mvh563hq80000gq/T/RtmpLzlESA/Rd2pdf225d
-c0b1a18/Rd2.out)
+(/private/var/folders/tr/sybyd51n7jx27k9mvh563hq80000gq/T/RtmpOATmy2/Rd2pdf14c5
+4c293d5c/Rd2.out)
+(/private/var/folders/tr/sybyd51n7jx27k9mvh563hq80000gq/T/RtmpOATmy2/Rd2pdf14c5
+4c293d5c/Rd2.out)
 \@outlinefile=\write4
 \openout4 = `Rd2.out'.
 
@@ -419,8 +419,8 @@ LaTeX Font Info:    Trying to load font information for U+rsfs on input line 32
 (/usr/local/texlive/2021/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-(/private/var/folders/tr/sybyd51n7jx27k9mvh563hq80000gq/T/RtmpLzlESA/Rd2pdf225d
-c0b1a18/Rd2.toc [1
+(/private/var/folders/tr/sybyd51n7jx27k9mvh563hq80000gq/T/RtmpOATmy2/Rd2pdf14c5
+4c293d5c/Rd2.toc [1
 
 
 {/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}])
@@ -483,23 +483,23 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [9]
 [10] [11] [12] [13] [14] [15] [16] [17] [18] [19] [20] [21] [22] [23] [24]
 [25] [26]
-(/private/var/folders/tr/sybyd51n7jx27k9mvh563hq80000gq/T/RtmpLzlESA/Rd2pdf225d
-c0b1a18/Rd2.ind [27] [28
+(/private/var/folders/tr/sybyd51n7jx27k9mvh563hq80000gq/T/RtmpOATmy2/Rd2pdf14c5
+4c293d5c/Rd2.ind [27] [28
 
 ])
-(/private/var/folders/tr/sybyd51n7jx27k9mvh563hq80000gq/T/RtmpLzlESA/Rd2pdf225d
-c0b1a18/Rd2.aux)
+(/private/var/folders/tr/sybyd51n7jx27k9mvh563hq80000gq/T/RtmpOATmy2/Rd2pdf14c5
+4c293d5c/Rd2.aux)
 Package rerunfilecheck Info: File `Rd2.out' has not changed.
 (rerunfilecheck)             Checksum: D9F1DFC92F15E3891EB501D54F3A5394;3262.
  ) 
 Here is how much of TeX's memory you used:
  9966 strings out of 478994
- 142662 string characters out of 5858183
+ 142675 string characters out of 5858183
  440991 words of memory out of 5000000
  27013 multiletter control sequences out of 15000+600000
  437875 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 88i,6n,90p,854b,615s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 88i,6n,90p,911b,615s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/inconsolata/i4-ts1.enc}{/
 usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/texli
 ve/2021/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-0.enc}</usr/local/texlive/
@@ -514,10 +514,10 @@ ve/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive
 dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts
 /type1/urw/times/utmr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw
 /times/utmri8a.pfb>
-Output written on Rd2.pdf (28 pages, 176263 bytes).
+Output written on Rd2.pdf (28 pages, 176322 bytes).
 PDF statistics:
- 619 PDF objects out of 1000 (max. 8388607)
- 572 compressed objects within 6 object streams
+ 620 PDF objects out of 1000 (max. 8388607)
+ 573 compressed objects within 6 object streams
  253 named destinations out of 1000 (max. 500000)
  241 words of extra memory for PDF output out of 10000 (max. 10000000)
 
